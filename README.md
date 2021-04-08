@@ -1,4 +1,4 @@
-# GenomeAnalysis
+# Genome Analysis 2021
 
 ## Aim of project
 The aim of this project is to reproduce some of the results from "The draft genome of tropical fruit durian (Durio zibethinus)" by Bin Tean Teh et al.
