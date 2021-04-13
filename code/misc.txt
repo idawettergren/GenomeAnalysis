@@ -42,3 +42,7 @@ mv SRR6058604_scaffold_10.xx_fastqc.zip ./zip_files/SRR6058604_scaffold_10.xx_fa
 module load bioinfo-tools
 module load MultiQC/1.9
 multiqc .
+
+
+% move all files in 02_canu_assembly to pacbio_canu_assembly, run command from 02_canu_assembly
+mv * /home/ida/genome_analysis/project/data/assemblies/pacbio_canu_assembly/
