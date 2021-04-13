@@ -12,3 +12,9 @@ jobstats -p -r -M snowy 4412616
 
 # unzip .zip files from FastQC output, replace xx with 1P/1U/2P/2U
 unzip SRR6058604_scaffold_10.xx_fastqc.zip
+
+# create a MultiQC summary file from the FastQC output, run commands while in FastQC output dir
+# I could change '.' to the actual path and be able to run the commands from anywhere, but cba 
+module load bioinfo-tools
+module load MultiQC/1.9
+multiqc .
