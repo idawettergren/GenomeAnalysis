@@ -6,14 +6,13 @@ rsync -P SraRunTable.txt ida@rackham.UPPMAX.uu.se:/home/ida/genome_analysis/proj
 
 
 # create soft links to the raw data
-# ran each command when in the correct directory
+# ran each command when in the chosen output directory
 # in order to run as a script change the last '.' to '/home/ida/genome_analysis/project/data/raw_data/..'
-# where '..' is the specific sub directory in raw_data (pacbio or illumina)
-# and change the filetype to a shell script (add the extension .sh)
-# soft link to pacbio reads
+# where '..' is the specific sub directory in raw_data (pacbio or illumina) and change it to a .sh script
+# soft link to PacBio reads
 ln -s /proj/g2021012/5_Tean_Teh_2017/pacbio_data/SRR6037732_scaffold_10.fq.gz .
 
-# soft links to illumina reads
+# soft links to Illumina reads
 ln -s /proj/g2021012/5_Tean_Teh_2017/illumina_data/SRR6058604_scaffold_10.1P.fastq.gz .
 ln -s /proj/g2021012/5_Tean_Teh_2017/illumina_data/SRR6058604_scaffold_10.1U.fastq.gz .
 ln -s /proj/g2021012/5_Tean_Teh_2017/illumina_data/SRR6058604_scaffold_10.2P.fastq.gz .
@@ -24,7 +23,7 @@ ln -s /proj/g2021012/5_Tean_Teh_2017/illumina_data/SRR6058604_scaffold_10.2U.fas
 sbatch genome_assembly.sh
 
 
-# create image of core usage for my second Canu assembly job (job_id = 4412616) while it was running
+# create image of core usage for the second Canu assembly job (job_id = 4412616) while it's running
 jobstats -p -r -M snowy 4412616
 
 
@@ -32,8 +31,9 @@ jobstats -p -r -M snowy 4412616
 sbatch fastqc_illumina.sh
 
 
-# unzip .zip files from FastQC output, replace xx with 1P/1U/2P/2U
+# unzip .zip files from FastQC output (replace xx with 1P/1U/2P/2U) then move the file to zip_files dir
 unzip SRR6058604_scaffold_10.xx_fastqc.zip
+mv SRR6058604_scaffold_10.xx_fastqc.zip ./zip_files/SRR6058604_scaffold_10.xx_fastqc.zip
 
 
 # create a MultiQC summary file from the FastQC output, run commands while in FastQC output dir
