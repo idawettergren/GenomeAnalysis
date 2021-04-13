@@ -9,3 +9,6 @@ sbatch genome_assembly.sh
 
 # create image of core usage for my second Canu assembly job (job_id = 4412616) while it was running
 jobstats -p -r -M snowy 4412616
+
+# unzip .zip files from FastQC output, replace xx with 1P/1U/2P/2U
+unzip SRR6058604_scaffold_10.xx_fastqc.zip
