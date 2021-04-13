@@ -1,5 +1,8 @@
-# commands that dont fit in the other files but i want saved
+# miscellanious commands
 
-# move SraRunTable to metadata directory in uppmax
+# move SraRunTable to metadata directory in UPPMAX
 # command run when in the directory of the file on local computer
 rsync -P SraRunTable.txt ida@rackham.UPPMAX.uu.se:/home/ida/genome_analysis/project/data/metadata/
+
+# start Canu assembly batch job
+sbatch genome_assembly.sh
