@@ -1,5 +1,0 @@
-The image snowy-g2021012-ida-4412616 shows the usage of cores by my second Canu assembly job. I used the
-graph to verify that I didn't request more cores than I need or that the maxThread parameter works.
-This graph was generated 1:46:13 into the job. The blue line (core usage) seems to stay constantly close to
-max capacity (400%, ie using all 4 requested cores to the fullest), so it looks like the job is running
-smoothly and I got the core requests correct.
