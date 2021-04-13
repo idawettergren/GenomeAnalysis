@@ -15,6 +15,7 @@ unzip SRR6058604_scaffold_10.xx_fastqc.zip
 
 # create a MultiQC summary file from the FastQC output, run commands while in FastQC output dir
 # I could change '.' to the actual path and be able to run the commands from anywhere, but cba 
+# the FastQC output dir is /home/ida/genome_analysis/project/GenomeAnalysis/analysis/pre_processing/fastqc/
 module load bioinfo-tools
 module load MultiQC/1.9
 multiqc .
