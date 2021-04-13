@@ -1,16 +1,20 @@
-An overview of how my UPPMAX directory is organised. For an image overview of the directory, see 'data_organisation.png'.
+An overview of how my UPPMAX directory is organised.
+An image overview of the directory can be found in 'data_organisation.png'.
 
 project: root directory with data_organisation files that overview all files and directories in the project
 
-analysis: sub dir to 'project'
+GenomeAnalysis: sub dir to 'project', local git repository
+
+analysis: sub dir to 'Genome Analysis'
 annotation: sub dir to 'analysis', currently empty, will be output from annotation
 genome_assembly: sub dir to 'analysis'
 canu: sub dir to 'genome_assembly', separate folders for each submitted Canu job
 01_canu_assembly: sub dir to 'canu', output from the first submitted Canu job
 02_canu_assembly: sub dir to 'canu', output from the second submitted Canu job
-pre_processing: sub dir to 'analysis', currently empty, will be output from fastq and trims of Illumina reads
+pre_processing: sub dir to 'analysis'
+fastqc: sub dir to 'pre_processing', currently empty, will be output from quality control of Illumina reads
 
-code: sub dir to 'project', scripts and files with commands
+code: sub dir to 'GenomeAnalysis', scripts and files with commands
 
 data: sub dir to 'project'
 metadata: sub dir to 'data', files with info about the data
@@ -19,4 +23,4 @@ illumina: sub dir to 'raw_data', 4 files (soft links) with Illumina reads
 pacbio: sub dir to 'raw_data', 1 file (soft link) with PacBio reads
 trimmed_data: sub dir to 'data', currently empty, will contain the data output from trimming the Illumina reads
 
-job_info: sub dir to 'project', files with info about submitted jobs (eg graphs over core usage)
+job_info: sub dir to 'GenomeAnalysis', files with info about submitted jobs (eg graphs over core usage)
