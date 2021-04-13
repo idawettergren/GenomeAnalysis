@@ -1,0 +1,16 @@
+Overview of core usage graphs for my second Canu job. The job is expected to take 17h using 4 cores.
+
+The images job_info_canu_xx.png contains the core usage graphs for the submitted job. I used them to verify
+that I didn't accidentaly request more cores than needed and to verify that I used the maxThread
+parameter correctly and that the job truly is running on all requested cores.
+
+The first graph, job_info_canu_01.png, was generated 01:46:13 into the job. The blue line (core usage) is
+close to max capacity (400%, when all 4 requested cores are used to the fullest), so it looks like the job
+is running on the correct number of cores and the maxThread parameter works.
+
+The second graph, job_info_canu_02.png, was generated 06:50:21 into the job. The core usage isn't as high as
+it was in the beginning, but is instead fluctuating around 250% core capcity. I don't really think it's
+something bad since the beginning of the graph clearly shows that the job can run on all four cores.
+I assume it simply means that the assembly requires less CPU in this stage.
+The first graph was enough to verify that all four cores were active and that I wasn't wasting data.
+I generated the second graph simply out of interest, not out of necessity.
