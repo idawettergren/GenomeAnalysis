@@ -1,11 +1,11 @@
 # miscellanious commands
 
-# move SraRunTable to metadata directory in UPPMAX
-# command run when in the directory of the file on local computer
+# move SraRunTable.txt to metadata directory in UPPMAX from a local computer
+# command was run when in the directory of the file on the local computer
 rsync -P SraRunTable.txt ida@rackham.UPPMAX.uu.se:/home/ida/genome_analysis/project/data/metadata/
 
 # start Canu assembly batch job
 sbatch genome_assembly.sh
 
-# create image over data usage for my second Canu assembly job with job_id = 4412616
+# create image of core usage for my second Canu assembly job (job_id = 4412616) while it was running
 jobstats -p -r -M snowy 4412616
