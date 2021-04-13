@@ -4,7 +4,7 @@
 The aim of this project is to reproduce some of the results from ["The draft genome of tropical fruit durian (Durio zibethinus)" by Bin Tean Teh et al](https://www.nature.com/articles/ng.3972/). I will not analyse the entire genome, but will instead focus only on scaffold 10.
 
 ## Methods
-A variety of analyses will be used during the project. These are Canu, Pilon and RepeatMaker for the DNA assembly, Trinity for the RNA assembly, BRAKER for annotation and BWA as well as STAR will be used as aligners.
+A variety of analyses will be used during the project. To assemble the PacBio reads I will use Canu, for quality control of the Illumina reads I will use FastQC and thereafter I can hopefully pre-process the Illumina reads using Trimmomatic. Then the assembled PacBio reads can be corrected with the help of the trimmed Illumina reads using BWA, after which the assembly can be further improved with Pilon and RepeatMasker. The assembly can then be annotated using BRAKER.
 
 ## Timeline (from the Student Manual checkpoints)
 In order to be on track the genome assembly should be done on April 15th, the annotation on April 29th and the RNA mapping on May 4th.
