@@ -14,7 +14,7 @@ module load bioinfo-tools
 module load canu/2.0
 
 # Run canu
-canu -num_threads 4 -p 01_canu_assembly -d /home/ida/genome_analysis/project/analysis/genome_assembly/canu \
-genomeSize=24.2m -pacbio-raw \
+canu -num_threads 4 -p 01_canu_assembly -d \
+/home/ida/genome_analysis/project/GenomeAnalysis/analysis/genome_assembly/canu genomeSize=24.2m -pacbio-raw \
 /home/ida/genome_analysis/project/data/raw_data/pacbio/SRR6037732_scaffold_10.fq.gz
 
