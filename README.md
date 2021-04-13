@@ -39,14 +39,14 @@ Running FastQC on all Illumina reads took about two minutes using one core and e
 Each unzipped directory contains two .txt files, one .fo file, one html file containing a report of the read as well as two directories with icons and images that I assume are unnecessary unless you use the graphical version of the module. The html file in the unzipped directory is (not??) the same as the html file recieved directly as an output from FastQC.
 After I unzipped the directories I moved the original .zip files to a separate directory [zip_files](analysis/pre_processing/fastqc/zip_files/), although I don't need them any more I would like to keep them in case something is about to go sideways. As of now I think I'm fine on storage and since they are compressed I don't think they will take up much space, even if they are gonna be among the first to go when I purge the project folder in search for more room.
 
-To summarize the output from the FastaQC analysis I used the MultiQC module to create a folder as well as an html file with data summary from the output files in [fastqc](analysis/pre_processing/fastqc/). The commands for running MultiQC can be found in [misc.txt](code/misc.txt).
+To summarize the output from the FastaQC analysis I used the MultiQC module to create a folder as well as an html file with data summary from the output files in [fastqc](analysis/pre_processing/fastqc/). The commands for running MultiQC can be found in [misc.txt](code/misc.txt). The file [multiqc_report.html](analysis/pre_processing/fastqc/multiqc_report.html)
+
 
 # To-do list
 * Update project plan according to feedback
-* Pre-processing of Illumina reads using Trimmomatic
-* Make data_organisation.png not look like shit
+* Write the wiki
 * Figure out the difference between the Illumina reads (1P/1U/2P/2U)
 * Draw conclusion from the results of FastQC with the help of the MultiQC summary
-* Write the wiki
-* Add folder with old data_organisation.png and update data_organisation.txt
-* Compare .html files from FastQC to see if they are duplicates
+* Pre-processing of Illumina reads using Trimmomatic
+* Make data_organisation.png not look like shit
+* Add folder with old data_organisation.png
