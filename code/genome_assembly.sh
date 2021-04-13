@@ -9,11 +9,11 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user ida.wettergren.8542@student.uu.se
 
-# Load canu module
+# Load Canu module
 module load bioinfo-tools
 module load canu/2.0
 
-# Run canu
+# Run Canu
 canu -maxThreads=4 -p 02_canu_assembly -d \
 /home/ida/genome_analysis/project/GenomeAnalysis/analysis/genome_assembly/canu/02_canu_assembly/ \
 genomeSize=24.2m -pacbio-raw \
