@@ -6,3 +6,6 @@ rsync -P SraRunTable.txt ida@rackham.UPPMAX.uu.se:/home/ida/genome_analysis/proj
 
 # start Canu assembly batch job
 sbatch genome_assembly.sh
+
+# create image over data usage for my second Canu assembly job with job_id = 4412616
+jobstats -p -r -M snowy 4412616
