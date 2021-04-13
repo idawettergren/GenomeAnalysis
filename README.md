@@ -50,4 +50,3 @@ Another thing I did to get a better overview of the results was to save all summ
 * Draw conclusion from the results of FastQC with the help of the MultiQC summary
 * Pre-processing (trimming) of Illumina reads using Trimmomatic
 * Make data_organisation.png not look like shit
-* 
