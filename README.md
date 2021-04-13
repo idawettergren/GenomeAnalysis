@@ -16,7 +16,7 @@ This git repository will contain all files except for the data.
 The files used in the project will be in many different file formats, for example fasta and fastq files.
 
 # Log
-An overview of what I have done so far.
+An overview of what I have done so far. Most of this should probably be moved to the wiki, but for now I just want it in one place.
 
 ## Retrieving metadata and raw data
 I searched [NCBI](https://www.ncbi.nlm.nih.gov/sra) for the accession number of the samples (PRJNA400310) from the paper. Then I downloaded the runinfo table file ‘SraRunTable.txt’ containing info on all runs and moved it to my metadata directory.
