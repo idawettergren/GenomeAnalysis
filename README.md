@@ -17,11 +17,11 @@ The files 'data_organisation.txt' and 'data_organisation.png' give an overview o
 An overview of what I have done so far.
 
 ## Retrieving metadata and raw data
-I searched [ncbi](https://www.ncbi.nlm.nih.gov/sra) for the accession number of the samples (PRJNA400310), with the accession number taken from the paper. Downloaded the runinfo table file ‘SraRunTable.txt’ containing info on all runs and moved it to my metadata directory in UPPMAX.
+I searched [NCBI](https://www.ncbi.nlm.nih.gov/sra) for the accession number of the samples (PRJNA400310), with the accession number taken from the paper. Downloaded the runinfo table file ‘SraRunTable.txt’ containing info on all runs and moved it to my metadata directory in UPPMAX.
 Created soft links (to avoid using up a lot of space) to files with PacBio and Illumina reads for scaffold 10 in the project folder from my raw_datafolder. The commands used for this can be found in ['retrieve_data'](code/retrieve_data). 
 
 ## Canu genome assembly
-Ran Canu genome assembly on the compressed PacBio reads (‘SRR6037732_scaffold_10.fq.gz’) by running the script [‘genome_assembly.sh’](code/genome_assembly.sh). In 'genome_assembly.sh' genomeSize is set to 24.2 because the data from [ncbi](https://www.ncbi.nlm.nih.gov/Traces/wgs/NSDW01?display=contigs), where scaffold 10's length is 24 162 007.
+Ran Canu genome assembly on the compressed PacBio reads (‘SRR6037732_scaffold_10.fq.gz’) by running the script [‘genome_assembly.sh’](code/genome_assembly.sh). In 'genome_assembly.sh' genomeSize is set to 24.2 because the data from [NCBI](https://www.ncbi.nlm.nih.gov/Traces/wgs/NSDW01?display=contigs), where scaffold 10's length is 24 162 007.
 The first job was submitted 03.28 on April 13th, because working normal hours are for nerds.
 First Canu assembly returned an error, the '-num_threads' parameter was invalid so I'm gonna use 'maxThreads' instead.
 Second Canu job submitted 06.27 on April 13th and is currently running (hopefully without any problems).
