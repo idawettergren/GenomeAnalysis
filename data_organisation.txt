@@ -1,0 +1,18 @@
+An overview of how my UPPMAX directory is organised. For an image overview, see 'data_organisation.png'.
+
+project: root directory
+
+analysis: sub dir to 'project'
+annotation: sub dir to 'analysis', currently empty, will be output from annotation
+genome_assembly: sub dir to 'analysis'
+canu: sub dir to 'genome_assembly', currently empty, will be output from Canu genome assembly
+pre_processing: sub dir to 'analysis', currently empty, will be output from fastq and trims
+
+code: sub dir to 'project', scripts and files with commands
+
+data: sub dir to 'project'
+metadata: sub dir to 'data', files with info about the data
+raw_data: sub dir to 'data'
+illumina: sub dir to 'raw_data', 4 files (soft links) with Illumina reads
+pacbio: sub dir to 'raw_data', 1 file (soft link) with PacBio reads
+trimmed_data: sub dir to 'data', currently empty, will contain data after trimming the raw data
