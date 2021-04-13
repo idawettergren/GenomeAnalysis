@@ -21,17 +21,16 @@ I searched [NCBI](https://www.ncbi.nlm.nih.gov/sra) for the accession number of 
 Since the files with the raw data reads are big and I'm limited on storage space I created soft links to PacBio and Illumina reads for scaffold 10 in the project folder from my raw_data folder instead of copying the files. The commands used for creating the soft links can be found in [retrieve_data](code/retrieve_data). 
 
 ## Canu genome assembly
-I ran Canu genome assembly on the compressed PacBio reads (SRR6037732_scaffold_10.fq.gz) by running the script [genome_assembly.sh](code/genome_assembly.sh). In that script the parameter genomeSize is set to 24.2 because of data from [NCBI](https://www.ncbi.nlm.nih.gov/Traces/wgs/NSDW01?display=contigs), where scaffold 10's length is set to 24 162 007. Maybe it would have been better to have set genomeSize to 24.1m since it is closer, but I'm not sure it matters too much.
+I ran a Canu genome assembly on the compressed PacBio reads (SRR6037732_scaffold_10.fq.gz) by running the script [genome_assembly.sh](code/genome_assembly.sh). In the script the parameter genomeSize is set to 24.2 because of data from [NCBI](https://www.ncbi.nlm.nih.gov/Traces/wgs/NSDW01?display=contigs), where scaffold 10's length is 24 162 007.
 
-The first Canu assembly job was submitted 03.28 on April 13th and returned an error right away. The -num_threads parameter was invalid so I'm gonna use maxThreads instead.
+The first Canu assembly job was submitted 03.28 on April 13th and returned an error right away. The -num_threads parameter was invalid so I will use the maxThreads parameter instead for the next job. This parameter is needed in order for the job to use all of the cores it requests.
 
-The second Canu job was submitted 06.27 on April 13th.
-I was a bit nervous about either requesting too many cores or not using all requested cores for the job, so I generated a graph over CPU usage for the job using the jobinfo command (full command with parameters can be found in [misc](code/misc)). The first graph of the job was made after 1h 43min and 23s and can be found in [job_info_canu_01.png](path_to_file) together with a short explanatory [text file](path_to_file). The job had almost just started, but the blue line (core usage) looks to be consistently close to max capacity, which would mean that the job is using all 4 requested cores.
+The second Canu job was submitted 06.27 on April 13th and *didn't* return an error right away.
+I was however nervous about either accidentaly requesting too many cores or not using all the requested cores, so I generated a graph over CPU usage for the job using the jobinfo command (full command with parameters can be found in [misc](code/misc)). The first graph of the job was made after 1h, 43min and 23s and can be found in [job_info_canu_01.png](job_info/job_info_canu_01.png) together with a short explanatory [text file](job_info/job_info_canu_01.txt). The job hadn't been running for too long, but the blue line (core usage) looks to be consistently close to the max capacity of 400% core usage, which would mean that the job is fully using all 4 requested cores.
 
 # To-do list
 * Update project plan according to feedback
 * Pre-processing and trimming of Illumina reads
 * Run the second Canu job (should be done around 23.30 on April 13th if the estimated 17h runtime is correct)
-* Figure out what is going on with the files in the Canu_assembly branch and merge it with the main branch
 * Make the data_organisation image not look like shit
 * Add, commit and push output files from the second Canu job to git
