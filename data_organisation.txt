@@ -21,6 +21,6 @@ metadata: sub dir to 'data', files with info about the data
 raw_data: sub dir to 'data'
 illumina: sub dir to 'raw_data', 4 files (soft links) with Illumina reads
 pacbio: sub dir to 'raw_data', 1 file (soft link) with PacBio reads
-trimmed_data: sub dir to 'data', currently empty, will contain the data output from trimming the Illumina reads
+trimmed_data: sub dir to 'data', currently empty
 
 job_info: sub dir to 'GenomeAnalysis', files with info about submitted jobs (eg graphs over core usage)
