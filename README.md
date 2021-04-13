@@ -1,7 +1,7 @@
 # Genome Analysis
 
 ## Aim of project
-The aim of this project is to reproduce some of the results from "The draft genome of tropical fruit durian (Durio zibethinus)" by Bin Tean Teh et al. I will not analyse the entire genome, but will instead focus only on scaffold 10.
+The aim of this project is to reproduce some of the results from ["The draft genome of tropical fruit durian (Durio zibethinus)" by Bin Tean Teh et al](https://www.nature.com/articles/ng.3972/). I will not analyse the entire genome, but will instead focus only on scaffold 10.
 
 ## Methods
 A variety of analyses will be used during the project. These are Canu, Pilon and RepeatMaker for the DNA assembly, Trinity for the RNA assembly, BRAKER for annotation and BWA as well as STAR will be used as aligners.
@@ -17,19 +17,19 @@ I don’t know how much space I will need, so the plan is to keep files compress
 An overview of what I have done so far.
 
 ## Retrieving metadata and raw data
-I searched [NCBI](https://www.ncbi.nlm.nih.gov/sra) for the accession number of the samples (PRJNA400310), with the accession number taken from the paper. Downloaded the runinfo table file ‘SraRunTable.txt’ containing info on all runs and moved it to my metadata directory in UPPMAX.
-Created soft links (to avoid using up a lot of space) to files with PacBio and Illumina reads for scaffold 10 in the project folder from my raw_datafolder. The commands used for this can be found in ['retrieve_data'](code/retrieve_data). 
+I searched [NCBI](https://www.ncbi.nlm.nih.gov/sra) for the accession number of the samples (PRJNA400310), with the accession number taken from the paper. Then I downloaded the runinfo table file ‘SraRunTable.txt’ containing info on all runs and moved it to my metadata directory.
+Since the files with the raw data reads are big and I'm limited on storage space I created soft links to PacBio and Illumina reads for scaffold 10 in the project folder from my raw_data folder instead of copying the files. The commands used for creating the soft links can be found in ['retrieve_data'](code/retrieve_data). 
 
 ## Canu genome assembly
-Ran Canu genome assembly on the compressed PacBio reads (‘SRR6037732_scaffold_10.fq.gz’) by running the script [‘genome_assembly.sh’](code/genome_assembly.sh). In 'genome_assembly.sh' genomeSize is set to 24.2 because the data from [NCBI](https://www.ncbi.nlm.nih.gov/Traces/wgs/NSDW01?display=contigs), where scaffold 10's length is 24 162 007.
-The first job was submitted 03.28 on April 13th, because working normal hours are for nerds.
-First Canu assembly returned an error, the '-num_threads' parameter was invalid so I'm gonna use 'maxThreads' instead.
-Second Canu job submitted 06.27 on April 13th and is currently running (hopefully without any problems).
+I ran Canu genome assembly on the compressed PacBio reads (‘SRR6037732_scaffold_10.fq.gz’) by running the script [‘genome_assembly.sh’](code/genome_assembly.sh). In that script the parameter 'genomeSize' is set to 24.2 because of data from [NCBI](https://www.ncbi.nlm.nih.gov/Traces/wgs/NSDW01?display=contigs), where scaffold 10's length is set to 24 162 007. Maybe it would have been better to have set 'genomeSize' to 24.1m since it is closer, but I'm not sure it matters too much.
 
-## To-do list
+The first Canu assembly job was submitted 03.28 on April 13th and returned an error right away. The '-num_threads' parameter was invalid so I'm gonna use 'maxThreads' instead.
+The second Canu job was submitted 06.27 on April 13th and is currently running (hopefully without any problems).
+
+# To-do list
 * Update project plan according to feedback
 * Pre-processing and trimming of Illumina reads
-* Wait for Canu job to be done (around 23.30 April 13th if the estimated 17h runtime is correct)
+* Wait for Canu job to be done (around 23.30 on April 13th if the estimated 17h runtime is correct)
 
 
 
