@@ -44,6 +44,7 @@ To summarize the output from the FastaQC analysis I used the MultiQC module to c
 * Pre-processing of Illumina reads
 * Run the second Canu job (should be done around 23.30 on April 13th if the estimated 17h runtime is correct)
 * Make data_organisation.png not look like shit
-* Add, commit and push output files from the second Canu job to git
-* Find out what the difference between the Illumina reads are (1P/1U/2P/2U)
-* Draw conclusion from the results of FastQC with the help of MultiQC
+* Add, commit and push output files from the second Canu job
+* Figure out the difference between the Illumina reads (1P/1U/2P/2U)
+* Draw conclusion from the results of FastQC with the help of the MultiQC summary
+* Write the wiki
