@@ -34,4 +34,4 @@ I was a bit nervous about either requesting too many cores or not using all requ
 * Run the second Canu job (should be done around 23.30 on April 13th if the estimated 17h runtime is correct)
 * Figure out what is going on with the files in the Canu_assembly branch and merge it with the main branch
 * Make the data_organisation image not look like shit
-* Add output files from second job to git
+* Add, commit and push output files from the second Canu job to git
