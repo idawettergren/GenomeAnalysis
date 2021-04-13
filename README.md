@@ -48,3 +48,4 @@ To summarize the output from the FastaQC analysis I used the MultiQC module to c
 * Figure out the difference between the Illumina reads (1P/1U/2P/2U)
 * Draw conclusion from the results of FastQC with the help of the MultiQC summary
 * Write the wiki
+* Add folder with old data_organisation.png
