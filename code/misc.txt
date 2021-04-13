@@ -46,3 +46,7 @@ multiqc .
 
 % move all files in 02_canu_assembly to pacbio_canu_assembly, run command from 02_canu_assembly
 mv * /home/ida/genome_analysis/project/data/assemblies/pacbio_canu_assembly/
+
+
+% save all summary.txt from FastQC in one single file, run command from FastQC output directory
+cat */summary.txt > summaries_fastqc.txt
