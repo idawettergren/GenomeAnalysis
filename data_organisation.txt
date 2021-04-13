@@ -8,9 +8,7 @@ GenomeAnalysis: sub dir to 'project', local git repository
 analysis: sub dir to 'Genome Analysis'
 annotation: sub dir to 'analysis', currently empty, will be output from annotation
 genome_assembly: sub dir to 'analysis'
-canu: sub dir to 'genome_assembly', separate folders for each submitted Canu job
-01_canu_assembly: sub dir to 'canu', output from the first submitted Canu job
-02_canu_assembly: sub dir to 'canu', output from the second submitted Canu job
+canu: sub dir to 'genome_assembly', two .out files from the Canu jobs
 pre_processing: sub dir to 'analysis'
 fastqc: sub dir to 'pre_processing', output from FastQC quality control of Illumina reads
 multiqc_data: sub dir to 'fastqc', summary of the output from FastQC
@@ -19,6 +17,8 @@ zip_files: sub dir to 'fastqc', original .zip files from the FastQC analysis
 code: sub dir to 'GenomeAnalysis', scripts and files with commands
 
 data: sub dir to 'project'
+assemblies: sub dir to 'data'
+pacbio_canu_assembly: sub dir to 'assemblies', output files from the Canu assembly
 metadata: sub dir to 'data', files with info about the data
 raw_data: sub dir to 'data'
 illumina: sub dir to 'raw_data', 4 files (soft links) with Illumina reads
