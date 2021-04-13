@@ -12,7 +12,8 @@ canu: sub dir to 'genome_assembly', separate folders for each submitted Canu job
 01_canu_assembly: sub dir to 'canu', output from the first submitted Canu job
 02_canu_assembly: sub dir to 'canu', output from the second submitted Canu job
 pre_processing: sub dir to 'analysis'
-fastqc: sub dir to 'pre_processing', currently empty, will be output from quality control of Illumina reads
+fastqc: sub dir to 'pre_processing', output from FastQC quality control of Illumina reads
+zip_files: sub dir to 'fastqc', original .zip files from the FastQC analysis
 
 code: sub dir to 'GenomeAnalysis', scripts and files with commands
 
