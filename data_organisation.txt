@@ -1,4 +1,4 @@
-An overview of how my UPPMAX directory is organised. For an image overview, see 'data_organisation.png'.
+An overview of how my UPPMAX directory is organised. For an image overview, see [data_organisation.png](data_organisation.png).
 
 project: root directory
 
