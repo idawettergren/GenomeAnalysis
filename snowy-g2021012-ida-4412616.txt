@@ -1,4 +1,4 @@
 The image snowy-g2021012-ida-4412616 shows the usage of cores by my second Canu assembly. I used to see
 that I didn't request more cores than I need, that the maxThread parameter didn't work or that anything was
-wrong. This was taken in the beginning of the job and since the blue line is constantly high I think
-everything is working as it should.
+wrong. This was taken in the beginning of the job, but the blue line seems to stay constantly high so I think
+everything is working as it should. At least when it comes to data usage.
