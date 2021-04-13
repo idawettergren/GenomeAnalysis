@@ -30,6 +30,7 @@ The second Canu job was submitted 06.27 on April 13th and is currently running (
 * Update project plan according to feedback
 * Pre-processing and trimming of Illumina reads
 * Wait for Canu job to be done (around 23.30 on April 13th if the estimated 17h runtime is correct)
+* Figure out what is going on with the files and merge the Canu_assembly branch with the main branch (wait until after the job is done)
 
 
 
