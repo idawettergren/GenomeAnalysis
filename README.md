@@ -37,11 +37,13 @@ Running FastQC on all Illumina reads took about two minutes using one core and e
 Each unzipped directory contains two .txt files, one .fo file, one html file containing a report of the read as well as two directories with icons and images that I assume are unnecessary unless you use the graphical version of the module.
 After I unzipped the directories I moved the original .zip files to a separate directory [zip_files](analysis/pre_processing/fastqc/zip_files/), although I don't need them any more I would like to keep them in case something is about to go sideways. As of now I think I'm fine on storage and since they are compressed I don't think they will take up much space, even if they are gonna be among the first to go when I purge the project folder in search for more room.
 
-To summarize the output from the FastaQC analysis I used the MultiQC module to create a folder with data summary as well as a html file from the output files in [fastqc](analysis/pre_processing/fastqc/), the commands for running MultiQC can be found in [misc](code/misc).
+To summarize the output from the FastaQC analysis I used the MultiQC module to create a folder as well as an html file with data summary from the output files in [fastqc](analysis/pre_processing/fastqc/). The commands for running MultiQC can be found in [misc](code/misc).
 
 # To-do list
 * Update project plan according to feedback
 * Pre-processing of Illumina reads
 * Run the second Canu job (should be done around 23.30 on April 13th if the estimated 17h runtime is correct)
-* Make the data_organisation image not look like shit
+* Make data_organisation.png not look like shit
 * Add, commit and push output files from the second Canu job to git
+* Find out what the difference between the Illumina reads are (1P/1U/2P/2U)
+* Draw conclusion from the results of FastQC with the help of MultiQC
