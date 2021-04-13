@@ -41,6 +41,8 @@ After I unzipped the directories I moved the original .zip files to a separate d
 
 To summarize the output from the FastaQC analysis I used the MultiQC module to create a folder as well as an html file with data summary from the output files in [fastqc](analysis/pre_processing/fastqc/). The commands for running MultiQC can be found in [misc.txt](code/misc.txt). Illumina reads with 1P in the name are paired forward read, 1U are unpaired forward read (only when the reverse reads fails the quality control), 2P are paired reverse reads and 2U are unpaired reverse reads (only when the forward reads fails the quality control). As can be seen in [multiqc_report.html](analysis/pre_processing/fastqc/multiqc_report.html), for my data read where only found in 1P and 2P. I don't really know what conclusion to draw from that? Does that mean the no read failed their quality control since thats the only way, at least how I understood it, that reads end up as 1U or 2U?
 
+Another thing I did to get a better overview of the results was to save all summary.txt files from the FastQC analysis in one file called [summaries_fastqc.txt](analysis/pre_processing/fastqc/summaries_fastqc.txt), see [misc.txt](code/misc.txt) for the command used.
+
 
 # To-do list
 * Update project plan according to feedback
