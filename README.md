@@ -43,17 +43,15 @@ To summarize the output from the FastaQC analysis I used the MultiQC module to c
 
 The provided Illumina reads seem to already be pre-processed, so I will therefore skip running Trimmomatic as I originally planned and move on directly to using the reads to correct the Canu assembly.
 
-## Correction of assembly
-To correct the Canu assembly of the PacBio reads I will use BWA.
-
+## Alignment of Canu assembly
+To correct the Canu assembly of the PacBio reads I will run a BWA alignment in the script [bwa_alignment.sh](code/bwa_alignment.sh). In this script I move to the directory I want the output in, which is something I should have done with some of the commands in [misc.txt](code/misc.txt) so they can be run from anywhere instead of running them from the command line while in the correct directory. I might go back and move the commands into separate script files so they are easier to find (and run).
 
 
 # To-do list
 * Update project plan according to feedback
-* Write the wiki - or is it ok to have the same info in this file but maybe thats more difficult to organize
+* Write the wiki? Or keep everything in this file?
 * Make data_organisation.png not look like shit
-* Go over all files, feels unorganised atm
-* Run Bwa (estimated time 1h)
-* Update data org files with alignmetns dir
-* Move some commands from misc.txt into their own script?
+* Run BWA alignment (estimated runtime 1h)
+* Update data_organisation files with alignmetns directory
+* Move some commands from misc.txt into their own script (?)
 * 
