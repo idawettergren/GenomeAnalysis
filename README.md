@@ -50,7 +50,7 @@ Another thing I did to get a better overview of the results was to save all summ
 
 # To-do list
 * Update project plan according to feedback
-* Write the wiki
+* Write the wiki - or is it ok to have the same info in this file but maybe thats more difficult to organize
 * Draw conclusion from the results of FastQC with the help of the MultiQC summary
 * Pre-processing (trimming) of Illumina reads using Trimmomatic
 * Make data_organisation.png not look like shit
