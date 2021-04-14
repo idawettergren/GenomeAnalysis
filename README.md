@@ -54,3 +54,6 @@ To correct the Canu assembly of the PacBio reads I will use BWA.
 * Make data_organisation.png not look like shit
 * Go over all files, feels unorganised atm
 * Run Bwa (estimated time 1h)
+* Update data org files with alignmetns dir
+* Move some commands from misc.txt into their own script?
+* 
