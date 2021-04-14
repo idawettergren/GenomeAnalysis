@@ -39,18 +39,18 @@ Running FastQC on all Illumina reads took about two minutes using one core and e
 Each unzipped directory contains two .txt files, one .fo file, one html file containing a report of the read as well as two directories with icons and images that I assume are unnecessary unless you use the graphical version of the module.
 After I unzipped the directories I moved the original .zip files to a separate directory [zip_files](analysis/pre_processing/fastqc/zip_files/), although I don't think I need them any more so I could as easily have deleted them. Currently I think I'm fine on storage so I'm gonna let them be.
 
-To summarize the output from the FastaQC analysis I used the MultiQC module to create a folder as well as an html file with data summary from the output files in [fastqc](analysis/pre_processing/fastqc/). The commands for running MultiQC can be found in [misc.txt](code/misc.txt). Illumina reads with 1P in the name are paired forward read, 1U are unpaired forward read (only when the reverse reads fails the quality control), 2P are paired reverse reads and 2U are unpaired reverse reads (only when the forward reads fails the quality control). As can be seen in [multiqc_report.html](analysis/pre_processing/fastqc/multiqc_report.html), sequences were only found in 1P and 2P, ie only in paired reads.
-I don't really know what conclusion to draw from that. Does that mean that no read failed their quality control since thats the only way, at least how I understood it, that reads end up as unpaired?
+To summarize the output from the FastaQC analysis I used the MultiQC module to create a folder as well as an html file with data summary from the output files in [fastqc](analysis/pre_processing/fastqc/). The commands for running MultiQC can be found in [misc.txt](code/misc.txt). Illumina reads with 1P in the name are paired forward read, 1U are unpaired forward read, 2P are paired reverse reads and 2U are unpaired reverse reads. Another thing I did to get a better overview of the results was to save all summary.txt files from the FastQC analysis in one file called [summaries_fastqc.txt](analysis/pre_processing/fastqc/summaries_fastqc.txt), see [misc.txt](code/misc.txt) for the command used.
 
-If you look at the first table in the [fastqc_report](analysis/pre_processing/fastqc/SRR6058604_scaffold_10.1U_fastqc/fastqc_report.html) for 1U reads it says that the file typ analyzed was 'null' which is weird. Almost all other values are set to 0, meaning that the file contains no sequences? The only information to be found in the report is the original file name (SRR6058604_scaffold_10.1U.fastq.gz) and that it's an Illumina read.
-Compared to the [fastqc_report](analysis/pre_processing/fastqc/SRR6058604_scaffold_10.1P_fastqc/fastqc_report.html) for 1P reads where all information is filled in, as I imagined all four files would have looked like.
+The provided Illumina reads seem to already be pre-processed, so I will therefore skip running Trimmomatic as I originally planned and move on directly to using the reads to correct the Canu assembly.
 
-Another thing I did to get a better overview of the results was to save all summary.txt files from the FastQC analysis in one file called [summaries_fastqc.txt](analysis/pre_processing/fastqc/summaries_fastqc.txt), see [misc.txt](code/misc.txt) for the command used.
+## Correction of assembly
+To correct the Canu assembly of the PacBio reads I will use BWA.
+
 
 
 # To-do list
 * Update project plan according to feedback
 * Write the wiki - or is it ok to have the same info in this file but maybe thats more difficult to organize
-* Draw conclusion from the results of FastQC with the help of the MultiQC summary
-* Pre-processing (trimming) of Illumina reads using Trimmomatic
 * Make data_organisation.png not look like shit
+* Go over all files, feels unorganised atm
+* Run Bwa (estimated time 1h)
