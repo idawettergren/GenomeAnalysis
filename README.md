@@ -49,15 +49,22 @@ In the script I also convert the .sam file to a .bam file (which takes less spac
 
 The submitted job took 31min to run.
 
+## Improvement of assembly using Pilon
+In order to use the aligned reads to improve the assembly I will use Pilon. Pilon takes a .fasta file together with a sorted .bam file with aligned reads and compares them, if inconsistencies are found Pilon tries to improve to genome. The output will be a .fasta file with the improved sequences. The script for this job is [pilon_improvement.sh](code/pilon_improvement.sh).
+
+Since Pilon needs the .bam file to be sorted, which the .bam file that the BWA alignment returned isn't, I used 'samtools sort' before running Pilon.
+
+In order to track changes made I will use the argument '--changes' so Pilon would also return a file listing all changes made. If something goes wrong, this could maybe be helpful.
+
 # To-do list
-* Update project plan according to feedback
+* Update project plan after feedback
 * Make data_organisation.png not look like shit
-* Look at the results of the BWA alignment
-* Look into Pilon and RepeatMasker
+* Run Pilon to improve the assembly
+* Update data_organisation files with Pilon directories
 
 ## To-maybe-do list
 * Write wiki
 * Move some commands from misc.txt into their own scripts
 * Remove fastqc, canu and bwa sub directories
 * Remove .sam file generated from the BWA alignment
-* Remove zip_files dir
+* Remove zip_files directory
