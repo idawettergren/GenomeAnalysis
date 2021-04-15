@@ -7,7 +7,7 @@ project: root directory with data_organisation files that overview all files and
             illumina_pacbio: sub dir to 'alignments', output from aligning Illumina reads with PacBio assembly using BWA
             rna_refseq: sub dir to 'alignments', currently empty, will be output from aligning RNA reads with reference sequence using STAR
         assemblies: sub dir to 'data'
-            pacbio_canu_assembly: sub dir to 'assemblies', output files from the Canu assembly of PacBio reads
+            pacbio_canu: sub dir to 'assemblies', output files from the Canu assembly of PacBio reads
             pilon_improvement: sub dir to 'assemblies', currently empty, will be output from Pilon improvement of pacbio assembly
         metadata: sub dir to 'data', info about the data
         raw_data: sub dir to 'data'
