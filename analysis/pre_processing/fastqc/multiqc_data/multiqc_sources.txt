@@ -1,5 +1,0 @@
-Module	Section	Sample Name	Source
-FastQC	all_sections	SRR6058604_scaffold_10.1P	/domus/h1/ida/genome_analysis/project/GenomeAnalysis/analysis/pre_processing/fastqc/SRR6058604_scaffold_10.1P_fastqc/fastqc_data.txt
-FastQC	all_sections	SRR6058604_scaffold_10.1U	/domus/h1/ida/genome_analysis/project/GenomeAnalysis/analysis/pre_processing/fastqc/SRR6058604_scaffold_10.1U_fastqc/fastqc_data.txt
-FastQC	all_sections	SRR6058604_scaffold_10.2P	/domus/h1/ida/genome_analysis/project/GenomeAnalysis/analysis/pre_processing/fastqc/SRR6058604_scaffold_10.2P_fastqc/fastqc_data.txt
-FastQC	all_sections	SRR6058604_scaffold_10.2U	/domus/h1/ida/genome_analysis/project/GenomeAnalysis/analysis/pre_processing/fastqc/SRR6058604_scaffold_10.2U_fastqc/fastqc_data.txt

@@ -1,8 +1,0 @@
-PASS	Basic Statistics	SRR6058604_scaffold_10.1U.fastq.gz
-PASS	Per base sequence content	SRR6058604_scaffold_10.1U.fastq.gz
-PASS	Per sequence GC content	SRR6058604_scaffold_10.1U.fastq.gz
-PASS	Per base N content	SRR6058604_scaffold_10.1U.fastq.gz
-PASS	Sequence Length Distribution	SRR6058604_scaffold_10.1U.fastq.gz
-PASS	Sequence Duplication Levels	SRR6058604_scaffold_10.1U.fastq.gz
-PASS	Overrepresented sequences	SRR6058604_scaffold_10.1U.fastq.gz
-WARN	Adapter Content	SRR6058604_scaffold_10.1U.fastq.gz
