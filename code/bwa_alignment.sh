@@ -16,10 +16,10 @@ module load samtools
 # Paths to the data
 illumina_1="/home/ida/genome_analysis/project/data/raw_data/illumina/SRR6058604_scaffold_10.1P.fastq.gz"
 illumina_2="/home/ida/genome_analysis/project/data/raw_data/illumina/SRR6058604_scaffold_10.2P.fastq.gz"
-assembly="/home/ida/genome_analysis/project/data/assemblies/pacbio_canu_assembly/02_canu_assembly.contigs.fasta"
+assembly="/home/ida/genome_analysis/project/data/assemblies/pacbio_canu/02_canu_assembly.contigs.fasta"
 
 # Move to output directory
-cd /home/ida/genome_analysis/project/data/alignments/
+cd /home/ida/genome_analysis/project/data/alignments/illumina_pacbio/
 
 # Align BWA with Illumina short reads
 # Create index
