@@ -11,6 +11,7 @@
 # Load modules
 module load bioinfo-tools
 module load bwa/0.7.17
+module load samtools/1.12
 
 # Paths to the data
 illumina_1="/home/ida/genome_analysis/project/data/raw_data/illumina/SRR6058604_scaffold_10.1P.fastq.gz"
