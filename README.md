@@ -54,6 +54,7 @@ In the script I also convert the .sam file to a .bam file (which takes less spac
 * Update project plan according to feedback
 * Make data_organisation.png not look like shit
 * Run BWA alignment (estimated runtime 1h)
+* Look into Pilon and RepeatMasker
 
 ## To-maybe-do list
 * Write wiki
