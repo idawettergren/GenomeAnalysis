@@ -18,7 +18,7 @@ illumina_2="/home/ida/genome_analysis/project/data/raw_data/illumina/SRR6058604_
 assembly="/home/ida/genome_analysis/project/data/assemblies/pacbio_canu_assembly/02_canu_assembly.contigs.fasta"
 
 # Move to output directory
-cd /home/ida/genome_analysis/project/GenomeAnalysis/analysis/alignment/bwa/
+cd /home/ida/genome_analysis/project/data/alignments/
 
 # Align BWA with Illumina short reads
 # Create index
