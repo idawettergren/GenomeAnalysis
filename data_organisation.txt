@@ -3,27 +3,28 @@ An image overview of the directory can be found in 'data_organisation.png'.
 
 project: root directory with data_organisation files that overview all files and directories in the project
 
-GenomeAnalysis: sub dir to 'project', local git repository
-
-analysis: sub dir to 'Genome Analysis'
-annotation: sub dir to 'analysis', currently empty, will be output from annotation
-genome_assembly: sub dir to 'analysis'
-canu: sub dir to 'genome_assembly', two .out files from the Canu jobs
-pre_processing: sub dir to 'analysis'
-fastqc: sub dir to 'pre_processing', output from FastQC quality control of Illumina reads
-multiqc_data: sub dir to 'fastqc', summary of the output from FastQC
-zip_files: sub dir to 'fastqc', original .zip files from the FastQC analysis, could be removed
-
-code: sub dir to 'GenomeAnalysis', scripts and files with commands
-
 data: sub dir to 'project'
-alignments: sub dir to 'data', currently empty
+alignments: sub dir to 'data', files generated from BWA alignment
 assemblies: sub dir to 'data'
 pacbio_canu_assembly: sub dir to 'assemblies', output files from the Canu assembly of PacBio reads
-metadata: sub dir to 'data', files with info about the data
+metadata: sub dir to 'data', info about the data
 raw_data: sub dir to 'data'
 illumina: sub dir to 'raw_data', 4 files (soft links) with Illumina reads
 pacbio: sub dir to 'raw_data', 1 file (soft link) with PacBio reads
 trimmed_data: sub dir to 'data', currently empty
+
+GenomeAnalysis: sub dir to 'project', local git repository
+
+analysis: sub dir to 'Genome Analysis'
+alignment: sub dir to 'analysis', .out file from BWA alignment
+annotation: sub dir to 'analysis', currently empty, will be output from annotation
+genome_assembly: sub dir to 'analysis'
+canu: sub dir to 'genome_assembly', two .out files from the Canu jobs
+pre_processing: sub dir to 'analysis'
+fastqc: sub dir to 'pre_processing', result files and summaries of results from the FastQC quality control of the provided Illumina reads
+multiqc_data: sub dir to 'fastqc', output from running MultiQC on the output of FastQC
+zip_files: sub dir to 'fastqc', original .zip files from the FastQC analysis, could prob be removed
+
+code: sub dir to 'GenomeAnalysis', scripts and files with commands
 
 job_info: sub dir to 'GenomeAnalysis', files with info about submitted jobs (eg graphs over core usage)
