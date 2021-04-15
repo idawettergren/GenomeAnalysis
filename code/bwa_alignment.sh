@@ -11,6 +11,7 @@
 # Load modules
 module load bioinfo-tools
 module load bwa/0.7.17
+module load samtools
 
 # Paths to the data
 illumina_1="/home/ida/genome_analysis/project/data/raw_data/illumina/SRR6058604_scaffold_10.1P.fastq.gz"
@@ -30,3 +31,6 @@ bwa aln -t 2 $assembly $illumina_2 > aln_illumina_2.sai
 
 # Generate alignment from the (paired-end) reads
 bwa sampe $assembly aln_illumina_1.sai aln_illumina_2.sai $illumina_1 $illumina_2 > illumina_pacbio_alignment.sam
+
+# Convert .sam file to .bam
+samtools view -b illumina_pacbio_alignment.sam > illumina_pacbio_alignment.bam
