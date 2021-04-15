@@ -8,6 +8,6 @@ Run fastqc_illumina.sh to perform a quality control with FastQC on the Illumina 
 
 (optional) Generate a summary of the test results from the FastQC run  using commands in misc.txt
 
-Run bwa_alignment.sh to align the PacBio assembly with the Illumina reads
+Run bwa_alignment.sh to align the PacBio assembly with the Illumina reads using BWA
 
-Run pilon_improvement.sh to improve the assembly using the Illumina reads with Pilon
+Run pilon_improvement.sh to improve the assembly using the aligned Illumina reads with Pilon
