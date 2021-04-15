@@ -52,6 +52,7 @@ The submitted job took 31min to run.
 # To-do list
 * Update project plan according to feedback
 * Make data_organisation.png not look like shit
+* Look at the results of the BWA alignment
 * Look into Pilon and RepeatMasker
 
 ## To-maybe-do list
