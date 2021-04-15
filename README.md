@@ -41,16 +41,12 @@ After I unzipped the directories I moved the original .zip files to a separate d
 
 To summarize the output from the FastaQC analysis I used the MultiQC module to create a folder as well as an html file with data summary from the output files in [fastqc](analysis/pre_processing/fastqc/). The commands for running MultiQC can be found in [misc.txt](code/misc.txt). Illumina reads with 1P in the name are paired forward read, 1U are unpaired forward read, 2P are paired reverse reads and 2U are unpaired reverse reads. Another thing I did to get a better overview of the results was to save all summary.txt files from the FastQC analysis in one file called [summaries_fastqc.txt](analysis/pre_processing/fastqc/summaries_fastqc.txt), see [misc.txt](code/misc.txt) for the command used.
 
-The provided Illumina reads seem to already be pre-processed, so I will therefore skip running Trimmomatic as I originally planned and move on directly to using the reads to correct the Canu assembly.
+The provided paired-end Illumina reads seem to already be pre-processed because no adapters were found and the sequences had high quality scores, so I will therefore skip running Trimmomatic as I originally planned and move on directly to using the reads to correct the Canu assembly.
 
 ## BWA alignment of Canu assembly
 To correct the Canu assembly of the PacBio reads I will run a BWA alignment in the script [bwa_alignment.sh](code/bwa_alignment.sh).
 
 In this script I move to the directory I want the output in, which is something I should have done with some of the commands in [misc.txt](code/misc.txt) so they can be run from anywhere instead of running them from the command line while in the correct directory. I might go back and move the commands into separate script files so they are easier to find (and run).
-
-Besides performing the BWA alignment, the script also converts the output .sam file to a .bam file using samtools.
-
-The BWA alignment job started 09.12 on April 15th, should be done in around 1h if the estimated time is correct.
 
 # To-do list
 * Update project plan according to feedback
