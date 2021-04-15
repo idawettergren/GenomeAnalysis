@@ -1,52 +1,42 @@
-# miscellanious commands (run on the command line)
+# miscellanious commands run on the command line
 
 # move SraRunTable.txt to metadata directory in UPPMAX from a local computer
 # command was run when in the directory of the file on the local computer
 rsync -P SraRunTable.txt ida@rackham.UPPMAX.uu.se:/home/ida/genome_analysis/project/data/metadata/
 
 
-# create soft links to the raw data
-# ran each command when in the chosen output directory
-# in order to run as a script change the last '.' to '/home/ida/genome_analysis/project/data/raw_data/..'
-# where '..' is the specific sub directory in raw_data (pacbio or illumina) and change it to a .sh script
-# soft link to PacBio reads
+# create a soft link to the provided PacBio reads in the current directory
 ln -s /proj/g2021012/5_Tean_Teh_2017/pacbio_data/SRR6037732_scaffold_10.fq.gz .
 
-# soft links to Illumina reads
+# create soft links to the provided Illumina reads in the current directory
 ln -s /proj/g2021012/5_Tean_Teh_2017/illumina_data/SRR6058604_scaffold_10.1P.fastq.gz .
 ln -s /proj/g2021012/5_Tean_Teh_2017/illumina_data/SRR6058604_scaffold_10.1U.fastq.gz .
 ln -s /proj/g2021012/5_Tean_Teh_2017/illumina_data/SRR6058604_scaffold_10.2P.fastq.gz .
 ln -s /proj/g2021012/5_Tean_Teh_2017/illumina_data/SRR6058604_scaffold_10.2U.fastq.gz .
 
 
-# start Canu assembly batch job
-sbatch genome_assembly.sh
+# general command to submit a batch job, where 'name_of_script' is the name of the script to run
+sbatch name_of_script.sh
 
 
-# create image of core usage for the second Canu assembly job (job_id = 4412616) while it's running
+# create image of core usage for the second Canu assembly job with job_id = 4412616 while it's running
 jobstats -p -r -M snowy 4412616
 
 
-# start job for FastQC quality control of Illumina reads
-sbatch fastqc_illumina.sh
-
-
-# unzip .zip files from FastQC output (replace xx with 1P/1U/2P/2U) then move the file to zip_files dir
+# unzip .zip files from FastQC and move them to the zip_files directory, where 'xx' is either 1P, 1U, 2P or 2U for respective read tested
 unzip SRR6058604_scaffold_10.xx_fastqc.zip
 mv SRR6058604_scaffold_10.xx_fastqc.zip ./zip_files/SRR6058604_scaffold_10.xx_fastqc.zip
 
 
-# create a MultiQC summary file from the FastQC output, run commands while in FastQC output dir
-# I could change '.' to the actual path and be able to run the commands from anywhere, but cba 
-# the FastQC output dir is /home/ida/genome_analysis/project/GenomeAnalysis/analysis/pre_processing/fastqc/
+# create a MultiQC summary of the FastQC results while in FastQC's output directory
 module load bioinfo-tools
 module load MultiQC/1.9
 multiqc .
 
 
-% move all files in 02_canu_assembly to pacbio_canu_assembly, run command from 02_canu_assembly
+# move all files in the current directory to the directory 'pacbio_canu_assembly', used to move output from Canu to the correct directory
 mv * /home/ida/genome_analysis/project/data/assemblies/pacbio_canu_assembly/
 
 
-% save all summary.txt from FastQC in one single file, run command from FastQC output directory
+# save all 'summary.txt' from FastQC in one single file called 'summaries_fastqc.txt', run from FastQC output directory
 cat */summary.txt > summaries_fastqc.txt
