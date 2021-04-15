@@ -50,8 +50,9 @@ In this script I move to the directory I want the output in, which is something 
 
 # To-do list
 * Update project plan according to feedback
-* Write the wiki? Or keep everything in this file?
+* Write the wiki (Or keep everything in this file?)
 * Make data_organisation.png not look like shit
 * Run BWA alignment (estimated runtime 1h)
-* Update data_organisation files with alignmetns directory
+* Update data_organisation files with alignments directory
 * Move some commands from misc.txt into their own script (?)
+* Remove fastqc, canu and bwa sub directories (?)
