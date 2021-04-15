@@ -27,6 +27,7 @@ sorted_bam="/home/ida/genome_analysis/project/data/alignments/illumina_pacbio_al
 # Move to output directory
 cd /home/ida/genome_analysis/project/data/assemblies/pilon_improvement/
 
-# Run Pilon on the sorted assembly to improve it
+# Run Pilon on the sorted assembly to improve it (incomplete)
+pilon --threads 2 --changes --output improved_pacbio_assembly --genome $assembly --frags $sorted_bam
 
 
