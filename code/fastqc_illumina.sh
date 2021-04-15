@@ -14,8 +14,5 @@ module load bioinfo-tools
 module load FastQC/0.11.9
 
 # Run FastQC on all Illumina reads in the directory
-fastqc -o /home/ida/genome_analysis/project/GenomeAnalysis/analysis/pre_processing/fastqc/ \
+fastqc -o /home/ida/genome_analysis/project/GenomeAnalysis/analysis/pre_processing/fastqc/illumina/ \
 /home/ida/genome_analysis/project/data/raw_data/illumina/*gz
-
-
-
