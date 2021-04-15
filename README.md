@@ -39,7 +39,7 @@ Running FastQC on all Illumina reads took about two minutes using one core and e
 Each unzipped directory contains two .txt files, one .fo file, one html file containing a report of the read as well as two directories with icons and images that I assume are unnecessary unless you use the graphical version of the module.
 After I unzipped the directories I moved the original .zip files to a separate directory [zip_files](analysis/pre_processing/fastqc/zip_files/), although I don't think I need them any more so I could as easily have deleted them. Currently I think I'm fine on storage so I'm gonna let them be.
 
-To summarize the output from the FastaQC analysis I used the MultiQC module to create a folder as well as an html file with data summary from the output files in [fastqc](analysis/pre_processing/fastqc/). The commands for running MultiQC can be found in [misc.txt](code/misc.txt). Illumina reads with 1P in the name are paired forward read, 1U are unpaired forward read, 2P are paired reverse reads and 2U are unpaired reverse reads. Another thing I did to get a better overview of the results was to save all summary.txt files from the FastQC analysis in one file called [summaries_fastqc.txt](analysis/pre_processing/fastqc/summaries_fastqc.txt), see [misc.txt](code/misc.txt) for the command used.
+To summarize the output from the FastaQC analysis I used the MultiQC module to create a folder as well as an .html file with data summary from the output files in [fastqc](analysis/pre_processing/fastqc/). The commands for running MultiQC can be found in [misc.txt](code/misc.txt) and the output report can be found in [multiqc_report.html](analysis/pre_processing/fastqc/multiqc_data/multiqc_report.html). Illumina reads with 1P in the name are paired forward read, 1U are unpaired forward read, 2P are paired reverse reads and 2U are unpaired reverse reads. Another thing I did to get a better overview of the results was to save all summary.txt files from the FastQC analysis in one file called [summaries_fastqc.txt](analysis/pre_processing/fastqc/summaries_fastqc.txt), see [misc.txt](code/misc.txt) for the command used.
 
 The provided paired-end Illumina reads seem to already be pre-processed because no adapters were found and the sequences had high quality scores, so I will therefore skip running Trimmomatic as I originally planned and move on directly to using the reads to correct the Canu assembly.
 
@@ -54,9 +54,11 @@ In the script I also convert the .sam file to a .bam file (which takes less spac
 * Update project plan according to feedback
 * Make data_organisation.png not look like shit
 * Run BWA alignment (estimated runtime 1h)
+* Look into Pilon and RepeatMasker
 
 ## To-maybe-do list
 * Write wiki
 * Move some commands from misc.txt into their own scripts
 * Remove fastqc, canu and bwa sub directories
 * Remove .sam file generated from the BWA alignment
+* Remove zip_files dir
