@@ -4,19 +4,17 @@
 The aim of this project is to reproduce some of the results from ["The draft genome of tropical fruit durian (Durio zibethinus)" by Bin Tean Teh et al](https://www.nature.com/articles/ng.3972/). I will not analyse the entire genome, but will instead focus only on scaffold 10.
 
 ## Methods (incomplete)
-A variety of analyses will be used during the project. To assemble the PacBio reads I will use Canu, for quality control of the Illumina reads I will use FastQC and thereafter trim them using Trimmomatic. Then the assembled PacBio reads can be corrected with the help of the trimmed Illumina reads using BWA, after which the assembly can be further improved with Pilon and RepeatMasker. The assembly can then be annotated using BRAKER.
+A variety of analyses will be used during the project. To assemble the PacBio reads I will use Canu, for quality control of the Illumina reads I will use FastQC and thereafter trim them using Trimmomatic. Then the assembled PacBio reads can be corrected with the help of the trimmed Illumina reads using BWA, after which ity can be further improved with Pilon and RepeatMasker. The assembly can then be annotated using BRAKER.
 
-## Timeline (from the Student Manual checkpoints)
-In order to be on track the genome assembly should be done on April 15th, the annotation on April 29th and the RNA mapping on May 4th.
+## Timeline
+In order to be on track the genome assembly should be done on April 18th, the annotation on May 2nd and the RNA mapping on May 9th. I have moved up the timeline in the student manual so that each deadline is on a Sunday, which gives me time to work on the weekends if needed.
 
 ## Data organization
 The files [data_organisation.txt](data_organisation.txt) and [data_organisation.png](data_organisation.png) give a simple overview of how I have organised my files.
-I don’t know how much space I will need so the plan is to keep files compressed for as long as possible and to use soft links for raw data to conserve space. All files used in the project will be stored in my UPPMAX directory.
-This git repository will contain all files except for the data.
-The files used in the project will be in many different file formats, for example fasta and fastq files.
+I don’t know how much space I will need so the plan is to keep files compressed for as long as possible and to use soft links for raw data to conserve space. All files used in the project will be stored in my UPPMAX directory while this git repository will contain all files except for the data. These files will be many different formats, for example .fasta, .fastq or .bam.
 
 # Log
-An overview of what I have done so far. Most of this should probably be moved to the wiki, but for now I just want it in one place.
+An overview of what I have done and my thoughts surrounding the project.
 
 ## Retrieving metadata and raw data
 I searched [NCBI](https://www.ncbi.nlm.nih.gov/sra) for the accession number of the samples (PRJNA400310) from the paper. Then I downloaded the runinfo table file ‘SraRunTable.txt’ containing info on all runs and moved it to my metadata directory.
@@ -41,19 +39,19 @@ After I unzipped the directories I moved the original .zip files to a separate d
 
 To summarize the output from the FastaQC analysis I used the MultiQC module to create a folder as well as an .html file with data summary from the output files in [fastqc](analysis/pre_processing/fastqc/). The commands for running MultiQC can be found in [misc.txt](code/misc.txt) and the output report can be found in [multiqc_report.html](analysis/pre_processing/fastqc/multiqc_data/multiqc_report.html). Illumina reads with 1P in the name are paired forward read, 1U are unpaired forward read, 2P are paired reverse reads and 2U are unpaired reverse reads. Another thing I did to get a better overview of the results was to save all summary.txt files from the FastQC analysis in one file called [summaries_fastqc.txt](analysis/pre_processing/fastqc/summaries_fastqc.txt), see [misc.txt](code/misc.txt) for the command used.
 
-The provided paired-end Illumina reads seem to already be pre-processed because no adapters were found and the sequences had high quality scores, so I will therefore skip running Trimmomatic as I originally planned and move on directly to using the reads to correct the Canu assembly.
+The provided paired-end Illumina reads appear to already be pre-processed because no adapters were found and the sequences had high quality scores, so I will therefore skip running Trimmomatic as I originally planned and move on directly to using the reads to correct the Canu assembly.
 
 ## BWA alignment of Canu assembly
 To correct the Canu assembly of the PacBio reads using the Illumina reads I will run a BWA alignment in the script [bwa_alignment.sh](code/bwa_alignment.sh).
 
-In this script I move to the directory I want the output in, which is something I should have done with some of the commands in [misc.txt](code/misc.txt) so they can be run from anywhere instead of running them from the command line while in the correct directory. I might go back and move the commands into separate script files so they are easier to find (and run).
+In this script I move to the directory I want the output in, which is something I chould have done with some of the commands in [misc.txt](code/misc.txt) so they can be run from anywhere instead of running them from the command line while in the correct directory. I might go back and move the commands into separate script files so they are easier to find (and run). 
+In the script I also convert the .sam file to a .bam file (which takes less space). I don't know if I will need the .sam file (I assume I won't since the same info is in the .bam file), but if I don't I can delete it to save storage space.
 
-In the script I also convert the .sam file to a .bam file (which takes less space). I don't know if I will need the .sam file (I assume I won't since the same info is in the .bam file) later, but if I don't I can delete it to save storage space.
+The submitted job took 31min to run.
 
 # To-do list
 * Update project plan according to feedback
 * Make data_organisation.png not look like shit
-* Run BWA alignment (estimated runtime 1h)
 * Look into Pilon and RepeatMasker
 
 ## To-maybe-do list
