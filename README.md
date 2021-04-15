@@ -44,7 +44,7 @@ To summarize the output from the FastaQC analysis I used the MultiQC module to c
 The provided paired-end Illumina reads seem to already be pre-processed because no adapters were found and the sequences had high quality scores, so I will therefore skip running Trimmomatic as I originally planned and move on directly to using the reads to correct the Canu assembly.
 
 ## BWA alignment of Canu assembly
-To correct the Canu assembly of the PacBio reads I will run a BWA alignment in the script [bwa_alignment.sh](code/bwa_alignment.sh).
+To correct the Canu assembly of the PacBio reads using the Illumina reads I will run a BWA alignment in the script [bwa_alignment.sh](code/bwa_alignment.sh).
 
 In this script I move to the directory I want the output in, which is something I should have done with some of the commands in [misc.txt](code/misc.txt) so they can be run from anywhere instead of running them from the command line while in the correct directory. I might go back and move the commands into separate script files so they are easier to find (and run).
 
