@@ -21,23 +21,10 @@ The files [data_organisation.txt](data_organisation.txt) and [data_organisation.
 # Log
 An overview of what I have done and my thoughts surrounding the project.
 
-## Retrieving metadata and raw data
+## Retrieving data
 I searched [NCBI](https://www.ncbi.nlm.nih.gov/sra) for the accession number of the samples (PRJNA400310) from the paper and downloaded the runinfo table file ‘SraRunTable.txt’ containing info on all runs and moved it to my metadata directory.
 
-Since the provided files containing the raw data are large and I'm limited on storage space, I created soft links to the PacBio and Illumina reads (for scaffold 10) in the project directory from my raw_data directory instead of copying the files there. The commands used for creating the soft links can be found in [misc.txt](code/misc.txt). 
-
-## Canu genome assembly
-I ran a Canu genome assembly on the PacBio reads in 'SRR6037732_scaffold_10.fq.gz' by running the script [genome_assembly.sh](code/genome_assembly.sh). The parameter 'genomeSize' is set to 24.2m because of data from [NCBI](https://www.ncbi.nlm.nih.gov/Traces/wgs/NSDW01?display=contigs), where scaffold 10's length is stated to be 24 162 007.
-
-In the student manual the estimated time for this job was 17 hour when using four cores, so I submitted it for max 20 hours using four cores. 
-
-The first Canu assembly job was started on April 13th and immediately returned an error. The [.out file](analysis/genome_assembly/canu/01_canu_assembly.out) states that the '-num_threads' parameter used was invalid, so when re-submitting the job the 'maxThreads' parameter will be used instead. A parameter that specifies the number of threads the job can use is needed in order for the job to actually use all the requested cores. Without it the job will run on one core, which is a waste of data and will probably result in the job not being completed in time.
-
-The second Canu job was started later the same day. There were two changes made to [the script](code/genome_assembly.sh): the parameter allowing the job to use multiple cores was changed from '-num_threads' to 'maxThreads' (however still set to 4) and the prefix as well as the output directory changed name from '01_canu_assembly" to '02_canu_assembly' in order to be able to distiguish between outputs from the two jobs.
-
-I was a bit paranoid about accidentally either requesting too many cores or not using the requested cores, so I generated a graph over CPU usage for the job using the jobinfo command in [misc.txt](code/misc.txt). The first graph of the job was made after 1h, 43min and 23s and can be found in [job_info_canu_01.png](job_info/job_info_canu_01.png) together with a short explanatory [text file](job_info/job_info_canu.txt). The blue graph (core usage) is consistently close to the max capacity of 400% core usage, which means that the job is almost fully using all 4 requested cores and that I am (probably and hopefully) not wasting data on this job. 
-
-The second Canu job took about 14h and 30min to complete. I realised that the output files should be stored in the data directory and not the [analysis](analysis/) one, so I moved all files besides the two .out files. .out files contain everything that would have been printed if the script had been run in a terminal. I also removed the sub directories in [canu](analysis/genome_assembly/canu/), since each job now only store one file each here.
+Since the provided files containing the raw data are large and I'm limited on storage space, I created soft links to the PacBio, Illumina and RNA reads (for scaffold 10) in the project directory from my raw_data directory instead of copying the files there. The commands used for creating the soft links can be found in [misc.txt](code/misc.txt). 
 
 ## Quality control and pre-processing of Illumina reads
 I ran a quality control on the provided Illumina reads using FastQC in the script [fastqc_illumina.sh](code/fastqc_illumina.sh). I wasn't sure how long time it would take or how many cores I need since there were no estimations for paper V in the student manual, so I assumed that it would be similar to the other papers'. Paper II's expected runtime was 3 min and paper IV's was 15 min, so I submitted the job for max one hour using one core.
@@ -51,7 +38,20 @@ To summarize the FastaQC results for the four reads in one file and get an overv
 
 The provided paired Illumina reads appear to already be pre-processed, since no adapters were found and the sequences had high quality scores. I will therefore not trim them with Trimmomatic. I could run Trimmomatic followed by another FastQC analysis and compare the results to the FastQC analysis in order to see if there was any significant improvements gained from trimming the reads. However, since they already passed the quality control I will use the provided reads directly to correct the PacBio assembly.
 
-## BWA alignment of Canu assembly
+## Assembly of PacBio reads
+I ran a Canu genome assembly on the PacBio reads in 'SRR6037732_scaffold_10.fq.gz' by running the script [genome_assembly.sh](code/genome_assembly.sh). The parameter 'genomeSize' is set to 24.2m because of data from [NCBI](https://www.ncbi.nlm.nih.gov/Traces/wgs/NSDW01?display=contigs), where scaffold 10's length is stated to be 24 162 007.
+
+In the student manual the estimated time for this job was 17 hour when using four cores, so I submitted it for max 20 hours using four cores. 
+
+The first Canu assembly job was started on April 13th and immediately returned an error. The [.out file](analysis/genome_assembly/canu/01_canu_assembly.out) states that the '-num_threads' parameter used was invalid, so when re-submitting the job the 'maxThreads' parameter will be used instead. A parameter that specifies the number of threads the job can use is needed in order for the job to actually use all the requested cores. Without it the job will run on one core, which is a waste of data and will probably result in the job not being completed in time.
+
+The second Canu job was started later the same day. There were two changes made to [the script](code/genome_assembly.sh): the parameter allowing the job to use multiple cores was changed from '-num_threads' to 'maxThreads' (however still set to 4) and the prefix as well as the output directory changed name from '01_canu_assembly" to '02_canu_assembly' in order to be able to distiguish between outputs from the two jobs.
+
+I was a bit paranoid about accidentally either requesting too many cores or not using the requested cores, so I generated a graph over CPU usage for the job using the jobinfo command in [misc.txt](code/misc.txt). The first graph of the job was made after 1h, 43min and 23s and can be found in [job_info_canu_01.png](job_info/job_info_canu_01.png) together with a short explanatory [text file](job_info/job_info_canu.txt). The blue graph (core usage) is consistently close to the max capacity of 400% core usage, which means that the job is almost fully using all 4 requested cores and that I am (probably and hopefully) not wasting data on this job. 
+
+The second Canu job took about 14h and 30min to complete. I realised that the output files should be stored in the data directory and not the [analysis](analysis/) one, so I moved all files besides the two .out files. .out files contain everything that would have been printed if the script had been run in a terminal. I also removed the sub directories in [canu](analysis/genome_assembly/canu/), since each job now only store one file each here.
+
+## Alignment of PacBio assembly and Illumina reads
 To be able to correct the Canu assembly of the PacBio reads using the Illumina reads, they first have to be aligned to the assembly. This was done by running BWA on the assembly and the Illumina reads in [bwa_alignment.sh](code/bwa_alignment.sh).
 
 First the script moves to the directory for the output, which is something I could have implemented earlier in the [FastQC](code/fastqc_illumina.sh) and [Canu](code/genome_assembly.sh) scripts so they could be run from any directory.
@@ -60,7 +60,7 @@ The .sam file that BWA returns is converted to .bam format containing the same i
 
 In the student manual the estimated time for this job was one hour when using two cores, so I submitted it for max two hours using two cores. It took 31min for the job to complete.
 
-## Improvement of assembly using Pilon
+## Improve PacBio assembly with Illumina reads
 To improve the PacBio assembly with the aligned Illumina reads I will use Pilon. Pilon takes a .fasta file together with a sorted .bam file of aligned reads, compares them and improve sequences where the assembly and Illumina reads differ. The output will be a .fasta file containing the improved genome sequence. The script to run this job is [pilon_improvement.sh](code/pilon_improvement.sh).
 
 Since Pilon needs the .bam file to be sorted and the .bam file converted from the .sam file that the BWA alignment returned isn't, the script first sorts the .bam file with 'samtools sort'. This chould have been done in a pipe when running the BWA alignment, perhaps like this:
@@ -71,10 +71,15 @@ This would mean that the .sam output from BWA would be piped through and convert
 
 In order to track changes made by Pilon I will use the argument '--changes' to output a .change file with all changes made in addition to the .fasta file.
 
+# Quality control and pre-processing of RNA reads
+Just as for the Illumina reads, a quality control will be done on the provided RNA reads.
+
 # To-do list
 * Make data_organisation.png not look like shit
 * Run Pilon to improve the assembly
-* Update data_organisation files with Pilon directories
+* Update data_organisation files with Pilon and transcriptome directories
+* Run FastQC on the RNA reads
+* Current soft link to the transcriptome data includes all scaffolds, only scaffold 10 is necessary
 
 ## To-maybe-do list
 * Write wiki
