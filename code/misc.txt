@@ -14,7 +14,7 @@ ln -s /proj/g2021012/5_Tean_Teh_2017/illumina_data/SRR6058604_scaffold_10.1U.fas
 ln -s /proj/g2021012/5_Tean_Teh_2017/illumina_data/SRR6058604_scaffold_10.2P.fastq.gz .
 ln -s /proj/g2021012/5_Tean_Teh_2017/illumina_data/SRR6058604_scaffold_10.2U.fastq.gz .
 
-# create a soft link to the provided transcriptome (untrimmed and trimmed)
+# create a soft link to the provided transcriptome data (untrimmed and trimmed) in the current directory
 ln -s /proj/g2021012/5_Tean_Teh_2017/transcriptome/ .
 
 
