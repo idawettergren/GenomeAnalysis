@@ -69,7 +69,8 @@ In order to track changes made I will use the argument '--changes' so Pilon woul
 ## To-maybe-do list
 * Write wiki
 * Move some commands from misc.txt into their own scripts
-* Remove fastqc, canu and bwa sub directories
-* Remove .sam file generated from the BWA alignment
-* Remove zip_files directory
-* Go back and add the pipeline to bwa_alignment 
+* Remove the .sam file generated from the BWA alignment
+* Remove the unsorted .bam file
+* Remove zip_files dir and the unzipped files from fastqc
+* Add the pipeline suggested in the log to bwa_alignment
+* 
