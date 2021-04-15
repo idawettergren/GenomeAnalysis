@@ -48,11 +48,15 @@ To correct the Canu assembly of the PacBio reads I will run a BWA alignment in t
 
 In this script I move to the directory I want the output in, which is something I should have done with some of the commands in [misc.txt](code/misc.txt) so they can be run from anywhere instead of running them from the command line while in the correct directory. I might go back and move the commands into separate script files so they are easier to find (and run).
 
+In the script I also convert the .sam file to a .bam file (which takes less space). I don't know if I will need the .sam file (I assume I won't since the same info is in the .bam file) later, but if I don't I can delete it to save storage space.
+
 # To-do list
 * Update project plan according to feedback
-* Write the wiki (Or keep everything in this file?)
 * Make data_organisation.png not look like shit
 * Run BWA alignment (estimated runtime 1h)
-* Update data_organisation files with alignments directory
-* Move some commands from misc.txt into their own script (?)
-* Remove fastqc, canu and bwa sub directories (?)
+
+## To-maybe-do list
+* Write wiki
+* Move some commands from misc.txt into their own scripts
+* Remove fastqc, canu and bwa sub directories
+* Remove .sam file generated from the BWA alignment
