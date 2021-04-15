@@ -53,11 +53,13 @@ The submitted job took 31min to run.
 In order to use the aligned reads to improve the assembly I will use Pilon. Pilon takes a .fasta file together with a sorted .bam file with aligned reads and compares them, if inconsistencies are found Pilon tries to improve to genome. The output will be a .fasta file with the improved sequences. The script for this job is [pilon_improvement.sh](code/pilon_improvement.sh).
 
 Since Pilon needs the .bam file to be sorted, which the .bam file that the BWA alignment returned isn't, I used 'samtools sort' before running Pilon. Maybe this should have been done in a pipe when running the BWA alignment, perhaps like this:
+
 bwa sampe $assembly aln_illumina_1.sai aln_illumina_2.sai $illumina_1 $illumina_2 > illumina_pacbio_alignment.sam | samtools view -b -@ 1 illumina_pacbio_alignment.sam > illumina_pacbio_alignment.bam | samtools sort -@ 2 illumina_pacbio_alignment.bam -o illumina_pacbio_alignment_sorted.bam
 
 This would mean that the .sam output from BWA would be piped to samtools view and converted to a .bam file then piped to samtools sort where it's sorted so only one file, the sorted .bam file, is created and less storage would be used (or at least the intermediary files wouldn't have to be manually removed).
 
-In order to track changes made I will use the argument '--changes' so Pilon would also return a file listing all changes made. If something goes wrong, this could maybe be helpful. I don't know if I need to specify the '--fix' argument or if I should use the default.
+In order to track changes made I will use the argument '--changes' so Pilon would also return a file listing all changes made. If something goes wrong, this could maybe be helpful.
+
 # To-do list
 * Update project plan after feedback
 * Make data_organisation.png not look like shit
