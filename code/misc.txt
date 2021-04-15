@@ -26,19 +26,19 @@ sbatch name_of_script.sh
 jobstats -p -r -M snowy 4412616
 
 
-# unzip .zip files from FastQC and move them to the zip_files directory, where 'xx' is either 1P, 1U, 2P or 2U for respective read tested
+# unzip .zip files from FastQC and move them to the zip_files directory, where 'xx' is either 1P, 1U, 2P or 2U for respective tested read
 unzip SRR6058604_scaffold_10.xx_fastqc.zip
-mv SRR6058604_scaffold_10.xx_fastqc.zip ./zip_files/SRR6058604_scaffold_10.xx_fastqc.zip
+mv *.zip ./zip_files/
 
 
-# create a MultiQC summary of the FastQC results while in FastQC's output directory
+# create a MultiQC summary of the FastQC results from FastQC's output directory
 module load bioinfo-tools
 module load MultiQC/1.9
-multiqc .
+multiqc -o ./multiqc/ .
 
 
-# move all files in the current directory to the directory 'pacbio_canu_assembly', used to move output from Canu to the correct directory
-mv * /home/ida/genome_analysis/project/data/assemblies/pacbio_canu_assembly/
+# move all files in the current directory to the directory 'pacbio_canu', used to move output from Canu assembly of PacBio reads
+mv * /home/ida/genome_analysis/project/data/assembly/pacbio_canu/
 
 
 # save all 'summary.txt' from FastQC in one single file called 'summaries_fastqc.txt', run from FastQC output directory
