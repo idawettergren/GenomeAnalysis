@@ -57,8 +57,7 @@ bwa sampe $assembly aln_illumina_1.sai aln_illumina_2.sai $illumina_1 $illumina_
 
 This would mean that the .sam output from BWA would be piped to samtools view and converted to a .bam file then piped to samtools sort where it's sorted so only one file, the sorted .bam file, is created and less storage would be used (or at least the intermediary files wouldn't have to be manually removed).
 
-In order to track changes made I will use the argument '--changes' so Pilon would also return a file listing all changes made. If something goes wrong, this could maybe be helpful.
-
+In order to track changes made I will use the argument '--changes' so Pilon would also return a file listing all changes made. If something goes wrong, this could maybe be helpful. I don't know if I need to specify the '--fix' argument or if I should use the default.
 # To-do list
 * Update project plan after feedback
 * Make data_organisation.png not look like shit
