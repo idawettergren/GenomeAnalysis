@@ -23,9 +23,10 @@ samtools index illumina_pacbio_alignment_sorted.bam
 # Paths to files
 assembly="/home/ida/genome_analysis/project/data/assembly/pacbio_canu/02_canu_assembly.contigs.fasta"
 sorted_bam="/home/ida/genome_analysis/project/data/alignment/illumina_pacbio/illumina_pacbio_alignment_sorted.bam"
+pilon="java -jar $PILON_HOME/pilon.jar"
 
 # Move to output directory
 cd /home/ida/genome_analysis/project/data/assembly/pilon_improvement/
 
-# Run Pilon on the sorted assembly to improve it (incomplete)
-pilon --threads 2 --changes --output improved_pacbio_assembly --genome $assembly --frags $sorted_bam
+# Run Pilon on the sorted assembly to improve it
+$pilon --threads 2 --changes --output improved_pacbio_assembly --genome $assembly --frags $sorted_bam
