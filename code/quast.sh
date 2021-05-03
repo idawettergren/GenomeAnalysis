@@ -17,4 +17,4 @@ assembly="/home/ida/genome_analysis/project/data/assembly/pilon_improvement/impr
 ref=""
 out_dir="/home/ida/genome_analysis/project/GenomeAnalysis/analysis/quast/"
 
-quast.py -o $out_dir -r $ref $assembly
+quast.py -t 2 -o $out_dir -r $ref $assembly
