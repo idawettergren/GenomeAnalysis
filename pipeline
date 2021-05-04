@@ -11,3 +11,9 @@ Run fastqc_illumina.sh to perform a quality control with FastQC on the Illumina 
 Run bwa_alignment.sh to align the PacBio assembly with the Illumina reads using BWA
 
 Run pilon_improvement.sh to improve the assembly using the aligned Illumina reads with Pilon
+
+Run quast.sh to evalute the pilon improvement
+
+(Run braker.sh to annotate the assembly)
+
+(Run trimmomatic.sh to trim the RNA reads)
