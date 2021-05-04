@@ -9,12 +9,11 @@
 #SBATCH --mail-user ida.wettergren.8542@student.uu.se
 
 # Load modules
-module bioinfo-tools
-module load quast/5.0.2
+module load bioinfo-tools
+module load quast
 
 # Paths to files (assembly after pilon improvements, reference genome)
 assembly="/home/ida/genome_analysis/project/data/assembly/pilon_improvement/improved_pacbio_assembly.fasta"
-ref=""
 out_dir="/home/ida/genome_analysis/project/GenomeAnalysis/analysis/quast/"
 
-quast.py -t 2 -o $out_dir -r $ref $assembly
+quast.py -t 2 -o $out_dir $assembly
