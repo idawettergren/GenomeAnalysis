@@ -79,8 +79,6 @@ Just as for the Illumina reads, a quality control will be done on the provided R
 
 # To-do list
 * Make data_organisation.png not look like shit
-* Run FastQC on the RNA reads
-* Current soft link to the transcriptome data includes all scaffolds, only scaffold 10 is necessary
-
-## To-maybe-do list
-* Write wiki
+* Run BRAKER on the masked assembly
+* Trim the RNA reads with Trimmoatic
+* Run quality control on the RNA reads
