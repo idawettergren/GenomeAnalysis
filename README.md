@@ -71,12 +71,14 @@ This would mean that the .sam output from BWA would be piped through and convert
 
 In order to track changes made by Pilon I will use the argument '--changes' to output a .change file with all changes made in addition to the .fasta file.
 
+## Mask repeated sequences
+Ran RepeatMasker.
+
 # Quality control and pre-processing of RNA reads
 Just as for the Illumina reads, a quality control will be done on the provided RNA reads.
 
 # To-do list
 * Make data_organisation.png not look like shit
-* Run Pilon to improve the assembly
 * Run FastQC on the RNA reads
 * Current soft link to the transcriptome data includes all scaffolds, only scaffold 10 is necessary
 
