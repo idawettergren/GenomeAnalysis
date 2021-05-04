@@ -1,0 +1,12 @@
+RepeatMasker version 4.1.0
+Search Engine: NCBI/RMBLAST [ 2.10.0+ ]
+
+
+INFO: For this species, RepeatMasker is using the new Dfam
+      consensus sequences. These are based on the Dfam seed
+      alignments and may differ from the ones in RepBase.
+
+Master RepeatMasker Database: /sw/bioinfo/RepeatMasker/4.1.0/rackham/Libraries/RepeatMaskerLib.embl ( Complete Database: CONS-Dfam_3.1-rb20181026 )
+
+
+cannot read file /home/ida/genome_analysis/project/data/alignment/illumina_pacbio/improved_pacbio_assembly.fasta in /domus/h1/ida/genome_analysis/project/GenomeAnalysis/code
