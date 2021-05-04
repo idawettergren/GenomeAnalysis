@@ -78,7 +78,7 @@ Ran RepeatMasker.
 Just as for the Illumina reads, a quality control will be done on the provided RNA reads.
 
 # To-do list
-* Make data_organisation.png not look like shit
+* Redo the image of data organisation
 * Run BRAKER on the masked assembly
 * Trim the RNA reads with Trimmoatic
 * Run quality control on the RNA reads
