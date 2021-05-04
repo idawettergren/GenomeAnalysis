@@ -13,5 +13,5 @@ modules load bioinfo-tools
 modules load trimmomatic
 
 # Paths to files
-rna_reads=""
-
+reads_forward="/home/ida/genome_analysis/project/data/raw_data/transcriptome/untrimmed/SRR6040095_scaffold_10.1.fastq.gz"
+reads_reverse="/home/ida/genome_analysis/project/data/raw_data/transcriptome/untrimmed/SRR6040095_scaffold_10.2.fastq.gz"
