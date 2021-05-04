@@ -14,6 +14,6 @@ Run pilon_improvement.sh to improve the assembly using the aligned Illumina read
 
 Run quast.sh to evalute the pilon improvement
 
-(Run braker.sh to annotate the assembly)
+(annotate masked assembly)
 
 (Run trimmomatic.sh to trim the RNA reads)
