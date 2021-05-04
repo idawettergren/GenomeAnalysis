@@ -1,0 +1,61 @@
+/sw/bioinfo/quast/4.5.4/rackham/bin/quast.py -t 2 -o /home/ida/genome_analysis/project/GenomeAnalysis/analysis/quast/ /home/ida/genome_analysis/project/data/assembly/pilon_improvement/improved_pacbio_assembly.fasta
+
+Version: 4.5.4
+
+System information:
+  OS: Linux-3.10.0-1160.21.1.el7.x86_64-x86_64-with-centos-7.9.2009-Core (linux_64)
+  Python version: 2.7.6
+  CPUs number: 16
+
+Started: 2021-05-03 12:29:19
+
+Logging to /home/ida/genome_analysis/project/GenomeAnalysis/analysis/quast/quast.log
+NOTICE: Output directory already exists. Existing Nucmer alignments can be used
+
+CWD: /domus/h1/ida/genome_analysis/project/GenomeAnalysis/code
+Main parameters: 
+  Threads: 2, minimum contig length: 500, ambiguity: one, threshold for extensive misassembly size: 1000
+
+Contigs:
+  Pre-processing...
+  /home/ida/genome_analysis/project/data/assembly/pilon_improvement/improved_pacbio_assembly.fasta ==> improved_pacbio_assembly
+
+2021-05-03 12:29:27
+Running Basic statistics processor...
+  Contig files: 
+    improved_pacbio_assembly
+  Calculating N50 and L50...
+    improved_pacbio_assembly, N50 = 573656, L50 = 13, Total length = 29794576, GC % = 31.63, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /home/ida/genome_analysis/project/GenomeAnalysis/analysis/quast/basic_stats/Nx_plot.pdf
+  Drawing cumulative plot...
+    saved to /home/ida/genome_analysis/project/GenomeAnalysis/analysis/quast/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /home/ida/genome_analysis/project/GenomeAnalysis/analysis/quast/basic_stats/GC_content_plot.pdf
+  Drawing improved_pacbio_assembly GC content plot...
+    saved to /home/ida/genome_analysis/project/GenomeAnalysis/analysis/quast/basic_stats/improved_pacbio_assembly_GC_content_plot.pdf
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding option to enable it.
+
+2021-05-03 12:29:31
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating Icarus viewers...
+  2 of 2: Creating PDF with all tables and plots...
+Done
+
+2021-05-03 12:29:32
+RESULTS:
+  Text versions of total report are saved to /home/ida/genome_analysis/project/GenomeAnalysis/analysis/quast/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /home/ida/genome_analysis/project/GenomeAnalysis/analysis/quast/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) saved to /home/ida/genome_analysis/project/GenomeAnalysis/analysis/quast/report.html
+  PDF version (tables and plots) is saved to /home/ida/genome_analysis/project/GenomeAnalysis/analysis/quast/report.pdf
+  Icarus (contig browser) is saved to /home/ida/genome_analysis/project/GenomeAnalysis/analysis/quast/icarus.html
+  Log saved to /home/ida/genome_analysis/project/GenomeAnalysis/analysis/quast/quast.log
+
+Finished: 2021-05-03 12:29:32
+Elapsed time: 0:00:13.339236
+NOTICEs: 2; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!
