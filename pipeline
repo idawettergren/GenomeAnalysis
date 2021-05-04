@@ -4,10 +4,16 @@ Run genome_assembly.sh to assemble the PacBio reads with Canu
 
 Run fastqc_illumina.sh to perform a quality control with FastQC on the Illumina reads
 
-(optional) Run MultiQC using commands in misc.txt to generate a summary of the FastQC analysis
+Run MultiQC using commands in misc.txt to generate a summary of the FastQC analysis
 
-(optional) Generate a summary of the test results from the FastQC run  using commands in misc.txt
+Generate a summary of the test results from the FastQC run  using commands in misc.txt
 
 Run bwa_alignment.sh to align the PacBio assembly with the Illumina reads using BWA
 
 Run pilon_improvement.sh to improve the assembly using the aligned Illumina reads with Pilon
+
+Run quast.sh to evalute the pilon improvement
+
+(Run braker.sh to annotate the assembly)
+
+(Run trimmomatic.sh to trim the RNA reads)
