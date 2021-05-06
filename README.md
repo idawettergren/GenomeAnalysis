@@ -75,10 +75,14 @@ In order to track changes made by Pilon I will use the argument '--changes' to o
 Ran RepeatMasker.
 
 # Quality control and pre-processing of RNA reads
-Just as for the Illumina reads, a quality control will be done on the provided RNA reads.
+Both trimmed and untrimmed RNA reads were provided, so I decided to trim the reads myself. This was done using Trimmomatic, where the Illumina tags and reads with a quality score under 3 were removed. After the trimming of the reads, I ran a quality control using FastQC, just as I did for the DNA reads.
+
+# Mapping of RNA reads
+To map the RNA reads after the pre-processing I will use STAR.
 
 # To-do list
 * Redo the image of data organisation
 * Run BRAKER on the masked assembly
-* Trim the RNA reads with Trimmoatic
+* Run eggNOGmapper to find genes 
+* Trim the RNA reads with Trimmoatic (first run failed, check .out file)
 * Run quality control on the RNA reads
