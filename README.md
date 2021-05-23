@@ -18,6 +18,17 @@ It's unclear how much space will be needed so the goal will be to keep files com
 
 The files [data_organisation.txt](data_organisation.txt) and [data_organisation.png](data_organisation.png) give an overview of the UPPMAX directory used to store the files.
 
+# Pipeline
+1. Run genome_assembly.sh to assemble the PacBio reads with Canu
+2. Run fastqc_illumina.sh to perform a quality control with FastQC on the Illumina reads
+3. Run bwa_alignment.sh to align the PacBio assembly with the Illumina reads using BWA
+4. Run pilon_improvement.sh to improve the assembly using the aligned Illumina reads with Pilon
+5. Run quast.sh to evalute the Pilon improvement
+6. Run trimmomatic.sh to trim the RNA reads
+7. Run fastqc_rna.sh to perfrom a quality control with FastQC on the RNA reads
+8. Run star_01.sh to map the RNA reads to the Pilon improved assembly
+9. Run braker.sh
+
 # Log
 An overview of what I have done and my thoughts surrounding the project.
 
