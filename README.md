@@ -91,9 +91,5 @@ Both trimmed and untrimmed RNA reads were provided, so I decided to trim the rea
 # Mapping of RNA reads
 To map the RNA reads after the pre-processing I will use STAR.
 
-# To-do list
-* Redo the image of data organisation
-* Run BRAKER on the masked assembly
-* Run eggNOGmapper to find genes 
-* Trim the RNA reads with Trimmoatic (first run failed, check .out file)
-* Run quality control on the RNA reads
+# Annotation
+To annotate the assembly, I used BRAKER. However, when running BRAKER I didn't get the output files that I wanted. The .gtf hints file was deleted after running BRAKER because it was empty and the .gff hints file was also empty. Since BRAKER finished running without problems I don't know what the cause of this is so in order to continue with the project I downloaded the .gtf file from NCBI.
