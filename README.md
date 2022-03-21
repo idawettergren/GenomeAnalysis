@@ -1,5 +1,7 @@
 # Genome Analysis
 
+From 2021
+
 ## Aim of project
 The aim of this project is to reproduce some of the results from ["The draft genome of tropical fruit durian (Durio zibethinus)" by Bin Tean Teh et al](https://www.nature.com/articles/ng.3972/). Scaffold 10 will be analysed instead of the entire genome.
 
