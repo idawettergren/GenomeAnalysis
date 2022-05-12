@@ -21,15 +21,15 @@ It's unclear how much space will be needed so the goal will be to keep files com
 The files [data_organisation.txt](data_organisation.txt) and [data_organisation.png](data_organisation.png) give an overview of the UPPMAX directory used to store the files.
 
 # Pipeline
-1. Run genome_assembly.sh to assemble the PacBio reads with Canu
-2. Run fastqc_illumina.sh to perform a quality control with FastQC on the Illumina reads
-3. Run bwa_alignment.sh to align the PacBio assembly with the Illumina reads using BWA
-4. Run pilon_improvement.sh to improve the assembly using the aligned Illumina reads with Pilon
-5. Run quast.sh to evalute the Pilon improvement
-6. Run trimmomatic.sh to trim the RNA reads
-7. Run fastqc_rna.sh to perfrom a quality control with FastQC on the RNA reads
-8. Run star_01.sh to map the RNA reads to the Pilon improved assembly
-9. Run braker.sh
+1. Run pacbio_canu_assembly.sh to assemble the PacBio reads with Canu. Output: /analysis/assembly/pacbio_canu/02_canu_assembly/
+2. Run fastqc_illumina.sh to perform a quality control with FastQC on the Illumina reads. Output: /analysis/pre_processing/fastqc/illumina/
+3. Run bwa_alignment.sh to align the PacBio assembly with the Illumina reads using BWA. Output: /data/alignment/illumina_pacbio/
+4. Run pilon_improvement.sh to improve the assembly using the aligned Illumina reads with Pilon. Output: /data/assembly/pilon_improvement/
+5. Run quast.sh to evalute the Pilon improvement. Output: /analysis/quast/
+6. Run trimmomatic.sh to trim the RNA reads. Output: /data/raw_data/transcriptome/trimmed/SRR6040095_scaffold_10.1U.fastq.gz (.1P/2U/2P)
+7. Run fastqc_rna.sh to perfrom a quality control with FastQC on the RNA reads. Output: /analysis/pre_processing/fastqc/rna/
+8. Run star_01.sh to map the RNA reads to the Pilon improved assembly. Output: /proj/g2021012/nobackup/work/ida/
+9. Run braker.sh. Output: ? (gtf file)
 
 # Log
 An overview of what I have done and my thoughts surrounding the project.
@@ -94,4 +94,4 @@ Both trimmed and untrimmed RNA reads were provided, so I decided to trim the rea
 To map the RNA reads after the pre-processing I will use STAR.
 
 # Annotation
-To annotate the assembly, I used BRAKER. However, when running BRAKER I didn't get the output files that I wanted. The .gtf hints file was deleted after running BRAKER because it was empty and the .gff hints file was also empty. Since BRAKER finished running without problems I don't know what the cause of this is so in order to continue with the project I downloaded the .gtf file from NCBI.
+To annotate the assembly, I used BRAKER. However, when running BRAKER I didn't get the output files that I wanted. The .gtf hints file was deleted after running BRAKER because it was empty and the .gff hints file was also empty. Since BRAKER finished running without problems I don't know what the cause of this is so in order to continue with the project I downloaded the .gtf file from NCBI (refseq GCF_002303985.1) that I then will make into a fasta file with protein sequence using the softmasked reference genome. Then that fasta file will eb submitted to eggnogmaker for functional annotation agaisnt their database.
