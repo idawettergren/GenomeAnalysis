@@ -1,0 +1,21 @@
+May 23 14:07:18 ..... started STAR run
+May 23 14:07:19 ... starting to generate Genome files
+May 23 14:07:20 ... starting to sort Suffix Array. This may take a long time...
+May 23 14:07:21 ... sorting Suffix Array chunks and saving them to disk...
+May 23 14:07:30 ... loading chunks from disk, packing SA...
+May 23 14:07:31 ... finished generating suffix array
+May 23 14:07:31 ... generating Suffix Array index
+May 23 14:07:32 ... completed Suffix Array index
+May 23 14:07:32 ... writing Genome to disk ...
+May 23 14:07:34 ... writing Suffix Array to disk ...
+May 23 14:07:36 ... writing SAindex to disk
+May 23 14:07:36 ..... finished successfully
+May 23 14:07:36 ..... started STAR run
+May 23 14:07:36 ..... loading genome
+May 23 14:07:37 ..... started mapping
+May 23 14:11:53 ..... finished mapping
+May 23 14:11:53 ..... started sorting BAM
+
+EXITING because of fatal ERROR: not enough memory for BAM sorting: 
+SOLUTION: re-run STAR with at least --limitBAMsortRAM 2077397127
+May 23 14:11:53 ...... FATAL ERROR, exiting

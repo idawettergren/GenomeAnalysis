@@ -1,0 +1,19 @@
+#!/bin/bash -l
+
+#SBATCH -A g2021012
+#SBATCH -M snowy
+#SBATCH -p core
+#SBATCH -n 1
+#SBATCH -t 1:00:00
+#SBATCH -J fastqc
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user ida.wettergren.8542@student.uu.se
+
+# Load FastQC module
+module load bioinfo-tools
+module load FastQC/0.11.9
+
+# Run FastQC on the trimmed RNA reads (after trimmomatic)
+fastqc -o /home/ida/genome_analysis/project/GenomeAnalysis/analysis/pre_processing/fastqc/rna/ \
+/home/ida/genome_analysis/project/data/trimmomatic/*
+
