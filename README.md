@@ -6,9 +6,9 @@ The aim of this project is to reproduce some of the results from ["The draft gen
 ## Methods
 To assemble the provided PacBio reads Canu will be used. For quality control of provided Illumina reads FastQC will be used, after which Trimmomatic will be used to trim the reads if necessary. The Illumina reads will then be aligned with the PacBio assembly using BWA and can then be used to improve the assembly using Pilon.
 
-To find where in the assembly potential genes are BRAKER will be used to perform a structural annotation and to find potential functions of the genes eggNOGmapper will be used to perform a functional annotation.
+To find where in the assembly potential genes are BRAKER will be used to perform a structural annotation, and to find potential functions of the genes eggNOGmapper will be used to perform a functional annotation.
 
-The RNA read will be mapped using STAR and then Htseq and Deseq2 will be used to determine up- and down regulation of the genes.
+Finally Htseq and Deseq2 will be used to determine up- and down regulation of the genes.
 
 ## Timeline
 In order to be on track the genome assembly should be done on April 18th, the annotation on May 2nd and the RNA mapping on May 9th. The timeline from the student manual have been moved up slightly here so that each deadline is on a Sunday, which allows for work on the weekends, should it be needed.
@@ -27,7 +27,10 @@ The files [data_organisation.txt](data_organisation.txt) and [data_organisation.
 6. Run trimmomatic.sh to trim the RNA reads. Output: /data/raw_data/transcriptome/trimmed/SRR6040095_scaffold_10.1U.fastq.gz (.1P/2U/2P)
 7. Run fastqc_rna.sh to perfrom a quality control with FastQC on the RNA reads. Output: /analysis/pre_processing/fastqc/rna/
 8. Run star_01.sh to map the RNA reads to the Pilon improved assembly. Output: /proj/g2021012/nobackup/work/ida/
-9. Run braker.sh. Output: ? (gtf file)
+9. Run braker.sh.
+10. Run EggNogMapper. (Currently here)
+11. Run HTSeq.
+12. Run Deseq2.
 
 # Log
 An overview of what I have done and my thoughts surrounding the project.
@@ -92,4 +95,5 @@ Both trimmed and untrimmed RNA reads were provided, so I decided to trim the rea
 To map the RNA reads after the pre-processing I will use STAR.
 
 # Annotation
-To annotate the assembly, I used BRAKER. However, when running BRAKER I didn't get the output files that I wanted. The .gtf hints file was deleted after running BRAKER because it was empty and the .gff hints file was also empty. Since BRAKER finished running without problems I don't know what the cause of this is so in order to continue with the project I downloaded the .gtf file from NCBI (refseq GCF_002303985.1) that I then will make into a fasta file with protein sequence using the softmasked reference genome. Then that fasta file will eb submitted to eggnogmaker for functional annotation agaisnt their database.
+To annotate the assembly, I used BRAKER. However, when running BRAKER I didn't get the output files that I wanted. The .gtf hints file was deleted after running BRAKER because it was empty and the .gff hints file was also empty. Since BRAKER finished running without problems I don't know what the cause of this is so in order to continue with the project I downloaded the .gtf file from NCBI (refseq GCF_002303985.1) that I then will use.
+I subitted the masked reference genome to eggnogmapper. (CURRENTLY)
