@@ -1,5 +1,5 @@
 #!/bin/bash -l
-#SBATCH -A uppmaxg2022-2-5
+#SBATCH -A uppmax2022-2-5
 #SBATCH -M snowy
 #SBATCH -p core
 #SBATCH -n 2
@@ -12,4 +12,4 @@
 module load bioinfo-tools
 module load eggNOG-mapper
 
-emapper.py -i ?? --itype genome -o func_annotation --output_dir ?? --cpu 2
+emapper.py -i /home/ida/genome_analysis/project/data/assembly/repeatmasker/improved_pacbio_assembly.fasta.masked --itype genome -o func_annotation --output_dir /home/ida/genome_analysis/project/data/eggnog --cpu 2
