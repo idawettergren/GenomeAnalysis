@@ -95,4 +95,4 @@ Both trimmed and untrimmed RNA reads were provided, so I decided to trim the rea
 To map the RNA reads after the pre-processing I will use STAR.
 
 # Annotation
-To annotate the assembly, I used BRAKER. However, when running BRAKER I didn't get the output files that I wanted. The .gtf hints file was deleted after running BRAKER because it was empty and the .gff hints file was also empty. Since BRAKER finished running without problems I don't know what the cause of this is so in order to continue with the project I am going to download and use the .gtf file from NCBI. 
+To annotate the assembly, I used BRAKER. However, when running BRAKER I didn't get the output files that I wanted. The .gtf hints file was deleted after running BRAKER because it was empty and the .gff hints file was also empty.
