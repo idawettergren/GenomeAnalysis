@@ -18,7 +18,7 @@ The aim of this project is to reproduce some of the results from ["The draft gen
 12. Deseq2 to perform a expression analysis between different parts of the fruit to determine up- and down regulation of the genes
 
 ## Data organization
-All files will be stored on my UPPMAX account, both this github repository and data files. The data files doesn't have to be in the github repository so they will be stored in a separate folder. To keep track of the various files from the various analyses I will have separate folders for each kind of analysis (alignment, assembly, etc). The files and folders will have informative names. Looking backwhen finishing the project I should have numbered the script files in the order they were performed to give a more intuative overlook.
+All files will be stored on my UPPMAX account, both this github repository and data files. The data files doesn't have to be in the github repository so they will be stored in a separate folder. To keep track of the various files from the various analyses I will have separate folders for each kind of analysis (alignment, assembly, etc). The files and folders will have informative names. In hindsight I should have numbered the script files and output folders in the order they were performed to give a more intuative overlook.
 
 During the project various types of data will be handled, for example fasta files (genome sequences) and BAM files (alignment information). I'm unsure of how much disk pace will be required so in order to not run out of it I will use compressed files and symbolic links where possible.
 
