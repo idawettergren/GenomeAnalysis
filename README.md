@@ -13,7 +13,7 @@ The aim of this project is to reproduce some of the results from ["The draft gen
 7. fastqc_rna.sh to perfrom a quality control with FastQC on the RNA reads. Output: /analysis/pre_processing/fastqc/rna/
 8. star_01.sh to map the RNA reads to the Pilon improved assembly. Output: /proj/g2021012/nobackup/work/ida/
 9. braker.sh to make a structural annotation of the genome assembly 
-10. EggNogMapper to a functional annotation of the genome assembly. Other students had trouble with the online version so I used the command line version instead.
+10. eggNOG-mapper to a functional annotation of the genome assembly
 11. HTSeq to count the reads mapped to each gene
 12. Deseq2 to perform a expression analysis between different parts of the fruit to determine up- and down regulation of the genes
 
@@ -60,3 +60,5 @@ The trimmed RNA reads were mapped using STAR.
 
 ### Annotation
 Braker was used annotate the assembly, however the script didn't work and there was no output because both the gtf hints and gff were empty. Because of this I downloaded the full gff file from NCBI and extracted scaffold 10 (NW_019167827.1) using the function GFF_split_into_scaffolds from the PopGenome package in R.
+
+For eggNOG-mapper other students had trouble with the online version so I used the command line version instead.
