@@ -54,4 +54,4 @@ Both trimmed and untrimmed RNA reads were provided and I decided to trim the rea
 The trimmed RNA reads were mapped using STAR.
 
 # Annotation
-Braker was used annotate the assembly, however the script didn't work and there was no output because both the gtf hints and gff were empty. Because of this I downloaded the full [gff file](https://www.ncbi.nlm.nih.gov/assembly/GCF_002303985.1) from NCBI and extracted scaffold 10 (NW_019167827.1) using the function GFF_split_into_scaffolds from the PopGenome package in R.
+Braker was used annotate the assembly, however the script didn't work and there was no output because both the gtf hints and gff were empty. Because of this I downloaded the full gff file from NCBI and extracted scaffold 10 (NW_019167827.1) using the function GFF_split_into_scaffolds from the PopGenome package in R.
