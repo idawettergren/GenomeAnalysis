@@ -95,4 +95,4 @@ Both trimmed and untrimmed RNA reads were provided, so I decided to trim the rea
 To map the RNA reads after the pre-processing I will use STAR.
 
 # Annotation
-To annotate the assembly, I used BRAKER. However, when running BRAKER I didn't get the output files that I wanted. The .gtf hints file was deleted after running BRAKER because it was empty and the .gff hints file was also empty.
+To annotate the assembly, I used BRAKER. However, when running BRAKER I didn't get the output files that I wanted. The .gtf hints file was deleted after running BRAKER because it was empty and the .gff hints file was also empty. Because of this I downloaded the full .gff file from NCBI (https://www.ncbi.nlm.nih.gov/assembly/GCF_002303985.1) and will extract scaffold 10 using the function GFF_split_into_scaffolds from the PopGenome package in R.
