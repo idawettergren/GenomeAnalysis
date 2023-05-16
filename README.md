@@ -3,7 +3,7 @@
 ## Aim of project
 The aim of this project is to reproduce some of the results from ["The draft genome of tropical fruit durian (Durio zibethinus)" by Bin Tean Teh et al](https://www.nature.com/articles/ng.3972/). Scaffold 10 will be analysed instead of the entire genome.
 
-## Pipeline
+## Project plan
 1. pacbio_canu_assembly.sh to assemble the PacBio reads with Canu. Output: /analysis/assembly/pacbio_canu/02_canu_assembly/
 2. fastqc_illumina.sh to perform a quality control with FastQC on the Illumina reads. Output: /analysis/pre_processing/fastqc/illumina/
 3. bwa_alignment.sh to align the PacBio assembly with the Illumina reads using BWA. Output: /data/alignment/illumina_pacbio/
@@ -16,6 +16,11 @@ The aim of this project is to reproduce some of the results from ["The draft gen
 10. EggNogMapper to a functional annotation of the genome assembly. Other students had trouble with the online version so I used the command line version instead.
 11. HTSeq to count the reads mapped to each gene
 12. Deseq2 to perform a expression analysis between different parts of the fruit to determine up- and down regulation of the genes
+
+## Data organization
+All files will be stored on my UPPMAX account, both this github repository and data files. The data files doesn't have to be in the github repository so they will be stored in a separate folder. To keep track of the various files from the various analyses I will have separate folders for each kind of analysis (alignment, assembly, etc). The files and folders will have informative names. Looking backwhen finishing the project I should have numbered the script files in the order they were performed to give a more intuative overlook.
+
+During the project various types of data will be handled, for example fasta files (genome sequences) and BAM files (alignment information). I'm unsure of how much disk pace will be required so in order to not run out of it I will use compressed files where possible 
 
 ## Analyses
 
